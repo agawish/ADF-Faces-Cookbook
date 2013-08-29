@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="org.amr.helloadf.model.HrModule">
+      <AppModuleConfig name="HrModuleLocal" jbo.project="org.amr.helloadf.model.Model" ApplicationName="org.amr.helloadf.model.HrModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="org.amr.helloadf.model.HrModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/HRConnectionDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HrModuleShared" jbo.project="org.amr.helloadf.model.Model" ApplicationName="org.amr.helloadf.model.HrModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="org.amr.helloadf.model.HrModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/HRConnectionDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
