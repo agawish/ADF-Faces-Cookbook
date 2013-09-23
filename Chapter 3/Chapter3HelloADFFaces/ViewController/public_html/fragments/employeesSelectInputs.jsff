@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl1">
+    <af:panelFormLayout id="pfl1">
+      <af:selectBooleanCheckbox text="Boolean Checkbox" id="sbc1"
+                                value="#{selectBean.booleanCheckbox}"/>
+      <af:selectBooleanRadio text="Boolean Radio" id="sbr1"
+                             value="#{selectBean.booleanRadio}" group="radioGroup"/>
+      <af:selectOneChoice label="One Choice" id="soc1" value="#{selectBean.oneChoice}">
+        <af:selectItem label="First Item" value="one" id="si1"/>
+        <af:selectItem label="Second Item" value="two" id="si2"/>
+        <af:selectItem label="Third Item" value="three" id="si3"/>
+        <af:selectItem label="Fourth Item" value="four" id="si4"/>
+      </af:selectOneChoice>
+      <af:selectOneListbox label="One Listbox" id="sol1" value="#{selectBean.oneListbox}">
+        <af:selectItem label="First Item" value="one" id="si5"/>
+        <af:selectItem label="Second Item" value="two" id="si6"/>
+        <af:selectItem label="Third Item" value="three" id="si7"/>
+        <af:selectItem label="Fourth Item" value="four" id="si8"/>
+      </af:selectOneListbox>
+      <af:selectOneRadio label="One Radio" id="sor1" value="#{selectBean.oneRadio}" layout="horizontal">
+        <af:selectItem label="First Item" value="one" id="si9"/>
+        <af:selectItem label="Second Item" value="two" id="si10"/>
+        <af:selectItem label="Third Item" value="three" id="si11"/>
+        <af:selectItem label="Fourth Item" value="four" id="si12"/>
+      </af:selectOneRadio>
+      <af:selectManyCheckbox label="Many Checkbox" id="smc1" value="#{selectBean.manyCheckbox}" layout="horizontal">
+        <af:selectItem label="First Item" value="one" id="si13"/>
+        <af:selectItem label="Second Item" value="two" id="si14"/>
+        <af:selectItem label="Third Item" value="three" id="si15"/>
+        <af:selectItem label="Fourth Item" value="four" id="si16"/>
+      </af:selectManyCheckbox>
+      <af:selectManyChoice label="Many Choice" id="smc2" value="#{selectBean.manyChoice}" layout="horizontal">
+        <af:selectItem label="First Item" value="one" id="si17"/>
+        <af:selectItem label="Second Item" value="two" id="si18"/>
+        <af:selectItem label="Third Item" value="three" id="si19"/>
+        <af:selectItem label="Fourth Item" value="four" id="si20"/>
+      </af:selectManyChoice>
+      <af:selectManyListbox label="Many Listbox" id="smc3" value="#{selectBean.manyListbox}" layout="horizontal">
+        <af:selectItem label="First Item" value="one" id="si21"/>
+        <af:selectItem label="Second Item" value="two" id="si22"/>
+        <af:selectItem label="Third Item" value="three" id="si23"/>
+        <af:selectItem label="Fourth Item" value="four" id="si24"/>
+      </af:selectManyListbox>
+      <af:selectManyShuttle label="Many Shuttle" id="smc4" value="#{selectBean.manyShuttle}" layout="horizontal">
+        <af:selectItem label="First Item" value="one" id="si25"/>
+        <af:selectItem label="Second Item" value="two" id="si26"/>
+        <af:selectItem label="Third Item" value="three" id="si27"/>
+        <af:selectItem label="Fourth Item" value="four" id="si28"/>
+      </af:selectManyShuttle>
+      <f:facet name="footer">
+        <af:button text="Submit" id="b1" action="#{selectBean.submitSelectInputs}"/>
+      </f:facet>
+      <af:selectOrderShuttle label="Order Shuttle" id="sms1" value="#{selectBean.orderShuttle}" layout="horizontal">
+        <af:selectItem label="First Item" value="one" id="si29"/>
+        <af:selectItem label="Second Item" value="two" id="si30"/>
+        <af:selectItem label="Third Item" value="three" id="si31"/>
+        <af:selectItem label="Fourth Item" value="four" id="si32"/>
+      </af:selectOrderShuttle>
+    </af:panelFormLayout>
+  </af:panelGroupLayout>
+</ui:composition>

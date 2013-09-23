@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">securePage</property>
+      <property
+         name="page">/securePage.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>securePage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">260.79883</property>
+      <property
+         name="x">262.02148</property>
+   </View>
+</SDM>

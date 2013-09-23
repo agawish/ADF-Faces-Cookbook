@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="org.amr.helloadf.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/employees.jsf" usageId="org_amr_helloadf_view_employeesPageDef"/>
+    <page path="/singleEmployee.jsf" usageId="org_amr_helloadf_view_singleEmployeePageDef"/>
+    <page path="/employeesTable.jsf" usageId="org_amr_helloadf_view_employeesTablePageDef"/>
+    <page path="/employeesList.jsf" usageId="org_amr_helloadf_view_employeesListPageDef"/>
+    <page path="/mdEmployeesTable.jsf" usageId="org_amr_helloadf_view_mdEmployeesTablePageDef"/>
+    <page path="/mdEmployeesTree.jsf" usageId="org_amr_helloadf_view_mdEmployeesTreePageDef"/>
+    <page path="/mdEmployeesList.jsf" usageId="org_amr_helloadf_view_mdEmployeesListPageDef"/>
+    <page path="/fragments/employeeInputs.jsff" usageId="org_amr_helloadf_view_employeeInputsPageDef"/>
+    <page path="/employeesInputs.jsf" usageId="org_amr_helloadf_view_employeesInputsPageDef"/>
+    <page path="/employeesSelectInputs.jsf" usageId="org_amr_helloadf_view_employeesSelectInputsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="org_amr_helloadf_view_employeesPageDef" path="org.amr.helloadf.view.pageDefs.employeesPageDef"/>
+    <page id="org_amr_helloadf_view_singleEmployeePageDef" path="org.amr.helloadf.view.pageDefs.singleEmployeePageDef"/>
+    <page id="org_amr_helloadf_view_employeesTablePageDef" path="org.amr.helloadf.view.pageDefs.employeesTablePageDef"/>
+    <page id="org_amr_helloadf_view_employeesListPageDef" path="org.amr.helloadf.view.pageDefs.employeesListPageDef"/>
+    <page id="org_amr_helloadf_view_mdEmployeesTablePageDef"
+          path="org.amr.helloadf.view.pageDefs.mdEmployeesTablePageDef"/>
+    <page id="org_amr_helloadf_view_mdEmployeesTreePageDef"
+          path="org.amr.helloadf.view.pageDefs.mdEmployeesTreePageDef"/>
+    <page id="org_amr_helloadf_view_mdEmployeesListPageDef"
+          path="org.amr.helloadf.view.pageDefs.mdEmployeesListPageDef"/>
+    <page id="org_amr_helloadf_view_employeeInputsPageDef" path="fragments.employeeInputsPageDef"/>
+    <page id="org_amr_helloadf_view_employeesInputsPageDef"
+          path="org.amr.helloadf.view.pageDefs.employeesInputsPageDef"/>
+    <page id="org_amr_helloadf_view_employeesSelectInputsPageDef"
+          path="org.amr.helloadf.view.pageDefs.employeesSelectInputsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrModuleDataControl" Package="org.amr.helloadf.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

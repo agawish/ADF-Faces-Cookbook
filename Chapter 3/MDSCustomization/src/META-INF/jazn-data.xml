@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
+<jazn-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data.xsd">
+  <jazn-realm default="jazn.com">
+    <realm>
+      <name>jazn.com</name>
+    </realm>
+  </jazn-realm>
+  <policy-store>
+    <applications>
+      <application>
+        <name>MDSCustomization</name>
+        <jazn-policy>
+          <grant>
+            <grantee>
+              <principals>
+                <principal>
+                  <class>oracle.security.jps.internal.core.principals.JpsAuthenticatedRoleImpl</class>
+                  <name>authenticated-role</name>
+                </principal>
+              </principals>
+            </grantee>
+            <permissions>
+              <permission>
+                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                <name>org.amr.mds.view.pageDefs.securePagePageDef</name>
+                <actions>view</actions>
+              </permission>
+            </permissions>
+          </grant>
+        </jazn-policy>
+      </application>
+    </applications>
+  </policy-store>
+</jazn-data>
