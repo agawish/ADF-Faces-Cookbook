@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentsEO"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DEPARTMENTS"
+  AliasName="DepartmentsEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    Precision="4"
+    Scale="0"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="DEPARTMENTS"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.amr.hrapp.model.entity.DepartmentsEO.DepartmentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.amr.hrapp.model.entity.DepartmentsEO.DepartmentName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ManagerId"
+    Precision="6"
+    Scale="0"
+    ColumnName="MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="DEPARTMENTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.amr.hrapp.model.entity.DepartmentsEO.ManagerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="EmployeesEO"
+    Association="com.amr.hrapp.model.entity.association.DepartmentsEmployeesFk1Assoc"
+    AssociationEnd="com.amr.hrapp.model.entity.association.DepartmentsEmployeesFk1Assoc.EmployeesEO"
+    AssociationOtherEnd="com.amr.hrapp.model.entity.association.DepartmentsEmployeesFk1Assoc.DepartmentsEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="EmployeesEO1"
+    Association="com.amr.hrapp.model.entity.association.EmployeesDepartmentsFk1Assoc"
+    AssociationEnd="com.amr.hrapp.model.entity.association.EmployeesDepartmentsFk1Assoc.EmployeesEO1"
+    AssociationOtherEnd="com.amr.hrapp.model.entity.association.EmployeesDepartmentsFk1Assoc.DepartmentsEO1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="DepartmentsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEPARTMENTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.amr.hrapp.model.entity.DepartmentsEO.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DepartmentsEmployeesFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPARTMENTS_EMPLOYEES_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.amr.hrapp.model.entity.DepartmentsEO.ManagerId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.amr.hrapp.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

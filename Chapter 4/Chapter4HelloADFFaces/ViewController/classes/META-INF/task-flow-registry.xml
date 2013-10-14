@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/employees-adf-select-inputs.xml" id="employees-adf-select-inputs" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/employees-crud-flow.xml" id="employees-crud-flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/employees-adf-inputs.xml" id="employees-adf-inputs" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/master-details-employees-table.xml" id="master-details-employees-table" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/master-details-employees-list.xml" id="master-details-employees-list" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/templates/hr-crud-template.xml" id="hr-crud-template" type="task-flow-template" uses-page-fragments="true" library-internal="false" train="false" critical="false" page-type="unspecified"/>
+   <task-flow-descriptor path="WEB-INF/multiple-employees-info-table.xml" id="multiple-employees-info-table" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/retrieve-employees-information.xml" id="retrieve-employees-information" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/master-details-employees-tree.xml" id="master-details-employees-tree" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/multiple-employees-info-list.xml" id="multiple-employees-info-list" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/single-employee-info.xml" id="single-employee-info" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
+</task-flow-registry>

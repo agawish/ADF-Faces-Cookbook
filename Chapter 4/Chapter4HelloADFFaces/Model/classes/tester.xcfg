@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="org.amr.helloadf.model.HrModule">
+      <AppModuleConfig name="14145F516C8" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/HRConnectionDS" ApplicationName="org.amr.helloadf.model.HrModule" jbo.project="org.amr.helloadf.model.Model" BC4JConfigName="HrModuleLocal" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DeployPlatform="LOCAL" JDBCName="HRConnection">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="org.amr.helloadf.model.HrModule"/>
+         <Tester FullProxyInterfaceName="org.amr.helloadf.model.common.HrModule"/>
+         <Custom ns0:LastUsedConfiguration="HrModuleLocal" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/HRConnectionDS" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

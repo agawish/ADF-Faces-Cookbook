@@ -1,0 +1,115 @@
+@import 'compass';
+
+//Header specific Variables
+$headerWrapperBackgroundStartColor: #008dab;
+$headerWrapperBackgroundEndColor: #007294;
+
+$headerMainBackgroundStartColor: #008ead;
+$headerMainBackgroundEndColor: #007b9d;
+$headerMainBorderColor: #006e8b;
+$headerMainRadius: 10px;
+
+$headerTitleColor: #fff;
+
+//Footer specific Variables
+$footerWrapperBackgroundColor: #E3E9DC;
+$footerCopyrightsColor: #A6A88F;
+$footerCopyrightsFontSize: 18px;
+
+.hr-header-wrapper {
+    height: 150px;
+    display: block;
+    background-color: $headerWrapperBackgroundEndColor;
+    //This is a compass mixin for making the background use linear-gradient
+    @include background(linear-gradient(top, $headerWrapperBackgroundStartColor, $headerWrapperBackgroundEndColor));
+}
+
+.hr-header-main {
+    background-color: $headerMainBackgroundEndColor;
+    border: solid 1px $headerMainBorderColor;
+    padding: 20px;
+    margin: 2.5% 0 2.5% 0;
+    //Another useful compass mixins
+    @include border-radius($headerMainRadius);
+    @include background(linear-gradient(top, $headerMainBackgroundStartColor, $headerMainBackgroundEndColor));
+    @include box-shadow(inset 0px 0px 0px 1px #12a0bf, 0px 1px 4px 0px rgba(0, 0, 0, 0.10) );
+}
+
+.hr-header-title {
+    color: $headerTitleColor;
+    text-decoration: none;
+}
+ 
+.hr-footer-wrapper {
+    height: 50px;
+    background-color: $footerWrapperBackgroundColor; 
+}
+
+.hr-footer-copyright {
+    color: $footerCopyrightsColor;
+    font-size: $footerCopyrightsFontSize;
+    display: block;
+    margin: 1% 0 0 0;
+}
+
+.hr-main-sidebar {
+  float: left;
+}
+.hr-main-content {
+    float: left;
+}
+.hr-main-content-navigation{
+    display: none;
+}
+
+// More generic styles
+.h1 {
+    font-size: 2.4em;
+    letter-spacing: -2px;
+    text-transform: lowercase;
+}
+//Styles for flat button styles
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.btn:active{
+  background-image: none;
+  outline: 0;
+  @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
+}
+
+@media screen and (max-width: 700px) {
+    .hr-main-sidebar{
+        display: none;
+    }
+    
+    .hr-main-content-navigation{
+        display: block;
+    }
+}

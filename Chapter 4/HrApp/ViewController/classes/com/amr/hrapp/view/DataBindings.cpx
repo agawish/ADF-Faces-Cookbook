@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.amr.hrapp.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/templates/defaultHrTemplate.jsf" usageId="com_amr_hrapp_view_defaultHrTemplatePageDef"/>
+    <page path="/employeesTable.jsf" usageId="com_amr_hrapp_view_employeesTablePageDef"/>
+    <page path="/templates/responsiveHrTemplate.jsf" usageId="com_amr_hrapp_view_responsiveHrTemplatePageDef"/>
+    <page path="/responsiveEmployees.jsf" usageId="com_amr_hrapp_view_responsiveEmployeesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_amr_hrapp_view_defaultHrTemplatePageDef" path="templates.defaultHrTemplatePageDef"/>
+    <page id="com_amr_hrapp_view_employeesTablePageDef" path="com.amr.hrapp.view.pageDefs.employeesTablePageDef"/>
+    <page id="com_amr_hrapp_view_responsiveHrTemplatePageDef" path="templates.responsiveHrTemplatePageDef"/>
+    <page id="com_amr_hrapp_view_responsiveEmployeesPageDef"
+          path="com.amr.hrapp.view.pageDefs.responsiveEmployeesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAppModuleDataControl" Package="com.amr.hrapp.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

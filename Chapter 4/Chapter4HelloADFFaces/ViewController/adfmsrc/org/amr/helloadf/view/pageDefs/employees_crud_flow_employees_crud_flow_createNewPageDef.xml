@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68"
+                id="employees_crud_flow_employees_crud_flow_createNewPageDef" Package="org.amr.helloadf.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="HrModuleDataControl" id="EmployeesView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

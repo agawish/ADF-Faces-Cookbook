@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="singleEmployee.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:panelFormLayout id="pfl1" maxColumns="200" rows="1">
+                        <af:group id="empInfo">
+                            <af:panelLabelAndMessage label="Employee ID" id="plam1">
+                                <af:outputText value="#{bindings.EmployeeId.inputValue}"
+                                               shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="First Name" id="plam2">
+                                <af:outputText value="#{bindings.FirstName.inputValue}"
+                                               shortDesc="#{bindings.FirstName.hints.tooltip}" id="ot2"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Last Name" id="plam3">
+                                <af:outputText value="#{bindings.LastName.inputValue}"
+                                               shortDesc="#{bindings.LastName.hints.tooltip}" id="ot3"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Email" id="plam4">
+                                <af:outputText value="#{bindings.Email.inputValue}"
+                                               shortDesc="#{bindings.Email.hints.tooltip}" id="ot4"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Phone Number" id="plam5">
+                                <af:outputText value="#{bindings.PhoneNumber.inputValue}"
+                                               shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="ot5"/>
+                            </af:panelLabelAndMessage>
+                        </af:group>
+                        <af:group id="jobInfo">
+                            <af:panelLabelAndMessage label="Hire Date" id="plam6">
+                                <af:outputText value="#{bindings.HireDate.inputValue}"
+                                               shortDesc="#{bindings.HireDate.hints.tooltip}" id="ot6">
+                                    <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Job ID" id="plam7">
+                                <af:outputText value="#{bindings.JobId.inputValue}"
+                                               shortDesc="#{bindings.JobId.hints.tooltip}" id="ot7"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Salary" id="plam8">
+                                <af:outputText value="#{bindings.Salary.inputValue}"
+                                               shortDesc="#{bindings.Salary.hints.tooltip}" id="ot8">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Commission Precentage" id="plam9">
+                                <af:outputText value="#{bindings.CommissionPct.inputValue}"
+                                               shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="ot9">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.CommissionPct.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                        </af:group>
+                        <af:group id="deptInfo">
+                            <af:panelLabelAndMessage label="Manager ID" id="plam10">
+                                <af:outputText value="#{bindings.ManagerId.inputValue}"
+                                               shortDesc="#{bindings.ManagerId.hints.tooltip}" id="ot10">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Department ID" id="plam11">
+                                <af:outputText value="#{bindings.DepartmentId.inputValue}"
+                                               shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="ot11">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                        </af:group>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
