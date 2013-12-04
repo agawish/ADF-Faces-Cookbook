@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesDepartmentsFk1Link"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  EntityAssociation="com.adffacescookbook.chapter4.model.entity.assoc.EmployeesDepartmentsFk1Assoc">
+  <ViewLinkDefEnd
+    Name="DepartmentsView1_1"
+    Cardinality="1"
+    Source="true"
+    Owner="com.adffacescookbook.chapter4.model.views.DepartmentsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DepartmentsView1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffacescookbook.chapter4.model.views.DepartmentsView.DepartmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmployeesView"
+    Cardinality="-1"
+    Owner="com.adffacescookbook.chapter4.model.views.EmployeesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EmployeesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffacescookbook.chapter4.model.views.EmployeesView.DepartmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

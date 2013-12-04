@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">inputComponents</property>
+      <property
+         name="page">/inputComponents.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>inputComponents&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">180.44238</property>
+      <property
+         name="x">284.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">employeesPopup</property>
+      <property
+         name="page">/employeesPopup.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesPopup&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">281.6377</property>
+      <property
+         name="x">285.0</property>
+   </View>
+   <View
+      id="View6">
+      <property
+         name="activityId">fileExplorerMenu</property>
+      <property
+         name="page">/fileExplorerMenu.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>fileExplorerMenu&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">283.04004</property>
+      <property
+         name="x">416.0</property>
+   </View>
+   <View
+      id="View7">
+      <property
+         name="activityId">outputComponents</property>
+      <property
+         name="page">/outputComponents.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>outputComponents&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">182.33887</property>
+      <property
+         name="x">413.0</property>
+   </View>
+</SDM>

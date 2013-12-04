@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+    <groupNode id="groupNode_inputOutput" idref="itemNode_inputComponents" label="Inputs and Outputs">
+        <itemNode id="itemNode_inputComponents" label="Input Components" action="inputs"
+                  focusViewId="/inputComponents"/>
+        <itemNode id="itemNode_outputComponents" label="Output components" action="outputs"
+                  focusViewId="/outputComponents"/>
+    </groupNode>
+    <itemNode id="itemNode_employeesPopup" label="Popup component" action="popups" focusViewId="/employeesPopup"/>
+    <itemNode id="itemNode_fileExplorerMenu" label="Menu component" action="menus"
+              focusViewId="/fileExplorerMenu">
+        <itemNode id="itemNode_navigationComponents" label="Navigation components " action="navigations"
+                  focusViewId="/navigationComponents"/>
+    </itemNode>
+</menu>

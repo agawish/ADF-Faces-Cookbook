@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="outputComponents.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:panelGroupLayout id="pgl1" layout="scroll">
+                        <af:outputText value="A Sample Date" id="ot2"/>
+                        <af:outputText value="#{viewScope.output.sampleDate}" id="ot1">
+                            <af:convertDateTime dateStyle="long"/>
+                        </af:outputText>
+                        <af:separator id="s1"/>
+                        <af:outputText value="Unformatted Text Truncated" id="ot3"/>
+                        <af:outputText value="#{viewScope.output.textWithoutFormat}" id="ot4" truncateAt="5"/>
+                        <af:separator id="s2"/>
+                        <af:outputText value="Formatted Text" id="ot5"/>
+                        <af:outputText value="#{viewScope.output.bigTextWithFormat}" id="ot6"/>
+                        <af:separator id="s3"/>
+                        <af:outputText value="Formatted Text escaped" id="ot7"/>
+                        <af:outputText value="#{viewScope.output.bigTextWithFormat}" id="ot8" escape="false"/>
+                        <af:separator id="s4"/>
+                        <af:outputText value="Formatted Text using Output Formatted" id="ot9"/>
+                        <af:outputFormatted value="#{viewScope.output.bigTextWithFormat}" id="ot10"/>
+                        <af:separator id="s5"/>
+                        <af:outputText value="Icon example" id="ot11"/>
+                        <af:icon name="logo" id="i1"/>
+                        <af:separator id="s6"/>
+                        <af:outputText value="Image example" id="ot12"/>
+                        <af:image source="#{resource['images:36H.jpg']}" id="i2" shortDesc="Two Trees"
+                                  inlineStyle="width:700px;height:549px"/>
+                        <af:separator id="s7"/>
+                        <af:outputText value="Image Link example" id="ot13"/>
+                        <af:link id="l1" destination="http://www.oracle.com" targetFrame="_blank">
+                            <af:image source="#{resource['images:37H.jpg']}" id="i3" shortDesc="One Tree"
+                                      inlineStyle="width:700px;height:549px"/>
+                        </af:link>
+                        <af:separator id="s8"/>
+                        <af:outputText value="Status Indicator Example" id="ot14"/>
+                        <af:button text="Make Status busy" id="b1"/>
+                        <af:statusIndicator id="si1"/>
+                        <af:separator id="s9"/>
+                        <af:outputText value="Media example" id="ot15"/>
+                        <af:media source="/media/sample_video.wmv" id="m1" autostart="true" standbyText="Loading..."/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

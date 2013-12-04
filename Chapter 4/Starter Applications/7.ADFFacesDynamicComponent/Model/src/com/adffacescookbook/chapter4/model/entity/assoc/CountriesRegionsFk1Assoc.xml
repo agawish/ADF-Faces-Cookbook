@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountriesRegionsFk1Assoc"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Region"
+    Cardinality="1"
+    Source="true"
+    Owner="com.adffacescookbook.chapter4.model.entity.Region">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Region"/>
+      <Attr Name="_foreignKey" Value="com.adffacescookbook.chapter4.model.entity.Region.RegionsPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffacescookbook.chapter4.model.entity.Region.RegionId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Country"
+    Cardinality="-1"
+    Owner="com.adffacescookbook.chapter4.model.entity.Country">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Country"/>
+      <Attr Name="_foreignKey" Value="com.adffacescookbook.chapter4.model.entity.Country.CountriesRegionsFk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffacescookbook.chapter4.model.entity.Country.RegionId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

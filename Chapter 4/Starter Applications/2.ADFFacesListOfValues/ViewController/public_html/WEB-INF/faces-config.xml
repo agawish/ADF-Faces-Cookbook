@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <converter>
+    <converter-id>ClobConverter</converter-id>
+    <converter-class>com.adffacescookbook.chapter4.view.converters.ClobConverter</converter-class>
+  </converter>
+  <converter>
+    <converter-id>FileConverter</converter-id>
+    <converter-class>com.adffacescookbook.chapter4.view.converters.FileUploadConverter</converter-class>
+  </converter>
+</faces-config>

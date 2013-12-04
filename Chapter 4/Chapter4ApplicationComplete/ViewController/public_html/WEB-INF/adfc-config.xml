@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="inputComponents">
+    <page>/inputComponents.jsf</page>
+  </view>
+  <view id="employeesPopup">
+    <page>/employeesPopup.jsf</page>
+  </view>
+  <view id="fileExplorerMenu">
+    <page>/fileExplorerMenu.jsf</page>
+  </view>
+  <view id="outputComponents">
+    <page>/outputComponents.jsf</page>
+  </view>
+  <view id="navigationComponents">
+    <page>/navigationComponents.jsf</page>
+  </view>
+  <view id="dynamicComponent">
+    <page>/dynamicComponent.jsf</page>
+  </view>
+  <control-flow-rule id="__2">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>popups</from-outcome>
+      <to-activity-id>employeesPopup</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>outputs</from-outcome>
+      <to-activity-id>outputComponents</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>inputs</from-outcome>
+      <to-activity-id>inputComponents</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>menus</from-outcome>
+      <to-activity-id>fileExplorerMenu</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>navigations</from-outcome>
+      <to-activity-id>navigationComponents</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>output</managed-bean-name>
+    <managed-bean-class>com.adffacescookbook.chapter4.view.beans.OutputComponents</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>navigationBean</managed-bean-name>
+    <managed-bean-class>com.adffacescookbook.chapter4.view.beans.NavigationBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__9">
+    <description>Menu Model Managed Bean</description>
+    <managed-bean-name>root_menu</managed-bean-name>
+    <managed-bean-class>oracle.adf.view.rich.model.MDSMenuModel</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__10">
+      <property-name>createHiddenNodes</property-name>
+      <value>false</value>
+    </managed-property>
+    <managed-property id="__11">
+      <property-name>source</property-name>
+      <property-class>java.lang.String</property-class>
+      <value>/WEB-INF/root_menu.xml</value>
+    </managed-property>
+  </managed-bean>
+</adfc-config>

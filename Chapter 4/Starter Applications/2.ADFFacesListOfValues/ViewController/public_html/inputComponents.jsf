@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="inputComponents.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1" usesUpload="true">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.EmployeeId.inputValue}"
+                                      label="#{bindings.EmployeeId.hints.label}"
+                                      required="#{bindings.EmployeeId.hints.mandatory}"
+                                      columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                      maximumLength="#{bindings.EmployeeId.hints.precision}"
+                                      shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1" secret="true">
+                            <f:validator binding="#{bindings.EmployeeId.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
+                                      required="#{bindings.FirstName.hints.mandatory}"
+                                      columns="#{bindings.FirstName.hints.displayWidth}"
+                                      maximumLength="#{bindings.FirstName.hints.precision}"
+                                      shortDesc="#{bindings.FirstName.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.FirstName.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.LastName.inputValue}" label="#{bindings.LastName.hints.label}"
+                                      required="#{bindings.LastName.hints.mandatory}"
+                                      columns="#{bindings.LastName.hints.displayWidth}"
+                                      maximumLength="#{bindings.LastName.hints.precision}"
+                                      shortDesc="#{bindings.LastName.hints.tooltip}" id="it3" rows="3">
+                            <f:validator binding="#{bindings.LastName.validator}"/>
+                        </af:inputText>
+                        <af:inputNumberSlider value="#{bindings.Salary.inputValue}"
+                                              label="#{bindings.Salary.hints.label}"
+                                              required="#{bindings.Salary.hints.mandatory}"
+                                              shortDesc="#{bindings.Salary.hints.tooltip}" id="it4" minimum="2000"
+                                              maximum="30000" majorIncrement="500" rendered="false">
+                            <f:validator binding="#{bindings.Salary.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
+                        </af:inputNumberSlider>
+                        <af:inputDate value="#{bindings.HireDate.inputValue}" label="#{bindings.HireDate.hints.label}"
+                                      required="#{bindings.HireDate.hints.mandatory}"
+                                      columns="#{bindings.HireDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.HireDate.hints.tooltip}" id="id1" rendered="false">
+                            <f:validator binding="#{bindings.HireDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                        </af:inputDate>
+                        <af:inputColor value="#{bindings.FavColor.inputValue}" label="#{bindings.FavColor.hints.label}"
+                                       required="#{bindings.FavColor.hints.mandatory}" compact="true"
+                                       shortDesc="#{bindings.FavColor.hints.tooltip}" id="it5" rendered="false">
+                            <f:validator binding="#{bindings.FavColor.validator}"/>
+                        </af:inputColor>
+                        <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
+                                            label="#{bindings.DepartmentId.label}"
+                                            required="#{bindings.DepartmentId.hints.mandatory}"
+                                            shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc1"
+                                            rendered="false">
+                            <f:selectItems value="#{bindings.DepartmentId.items}" id="si1"/>
+                            <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                        </af:selectOneChoice>
+                        <af:richTextEditor value="#{bindings.Biography.inputValue}"
+                                           label="#{bindings.Biography.hints.label}"
+                                           required="#{bindings.Biography.hints.mandatory}"
+                                           columns="#{bindings.Biography.hints.displayWidth}"
+                                           shortDesc="#{bindings.Biography.hints.tooltip}" id="it6"
+                                           converter="ClobConverter" rendered="false"/>
+                        <af:inputFile value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                      required="#{bindings.Image.hints.mandatory}"
+                                      columns="#{bindings.Image.hints.displayWidth}"
+                                      shortDesc="#{bindings.Image.hints.tooltip}" id="it7" autoSubmit="true"
+                                      converter="FileConverter" rendered="false">
+                            <f:validator binding="#{bindings.Image.validator}"/>
+                        </af:inputFile>
+                        <af:codeEditor value="#{bindings.CodeSample.inputValue}"
+                                       label="#{bindings.CodeSample.hints.label}"
+                                       required="#{bindings.CodeSample.hints.mandatory}"
+                                       columns="#{bindings.CodeSample.hints.displayWidth}"
+                                       shortDesc="#{bindings.CodeSample.hints.tooltip}" id="it8"
+                                       converter="ClobConverter" language="xml" rows="20" rendered="false">
+                            <f:validator binding="#{bindings.CodeSample.validator}"/>
+                        </af:codeEditor>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

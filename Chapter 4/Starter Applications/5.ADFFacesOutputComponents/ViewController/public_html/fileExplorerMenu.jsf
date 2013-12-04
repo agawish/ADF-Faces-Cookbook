@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="fileExplorerMenu.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:toolbox id="t1">
+                        <af:menuBar id="mb1">
+                            <af:menu text="File" id="m1">
+                                <af:menu text="New" id="m2" icon="#{resource['images:new_ena.png']}">
+                                    <af:commandMenuItem text="New File" id="cmi1" accelerator="control F"/>
+                                    <af:commandMenuItem text="New Folder" id="cmi2" accelerator="control D"/>
+                                </af:menu>
+                                <af:commandMenuItem text="Find" id="cmi4"
+                                                    icon="#{resource['images:find_ena.png']}"/>
+                                <af:commandMenuItem text="Word wrap" id="cmi3" type="check"/>
+                            </af:menu>
+                            <af:menu text="View" id="m3">
+                                <af:goMenuItem text="Search in Oracle" id="gmi1" destination="http://www.oracle.com"
+                                               targetFrame="_blank"/>
+                            </af:menu>
+                            <af:menu text="Edit" id="m4">
+                                <af:commandMenuItem text="Undo" id="cmi5" icon="#{resource['images:undo.png']}"/>
+                            </af:menu>
+                        </af:menuBar>
+                        <af:toolbar id="t2">
+                            <af:group id="g1">
+                                <af:button text="Undo" id="b1" icon="#{resource['images:undo.png']}"/>
+                                <af:button text="Redo" id="b2" icon="#{resource['images:redo.png']}"/>
+                            </af:group>
+                            <af:group id="g2">
+                                <af:inputText id="it1" placeholder="Find inside files" label="Label 1" simple="true"/>
+                                <af:button id="b3" icon="#{resource['images:find_ena.png']}"/>
+                            </af:group>
+                            <af:selectOneChoice label="Choose Skin" id="soc1">
+                                <af:selectItem label="Blue Skin" value="blue" id="si1"/>
+                                <af:selectItem label="Red Skin" value="red" id="si2"/>
+                                <af:selectItem label="Green Skin" value="green" id="si3"/>
+                            </af:selectOneChoice>
+                        </af:toolbar>
+                    </af:toolbox>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

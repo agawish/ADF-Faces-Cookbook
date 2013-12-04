@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-definition">
+    <default-activity>trainStep1</default-activity>
+    <view id="trainStep1">
+      <page>/fragments/trainStep1.jsff</page>
+      <train-stop>
+        <display-name>Step 1</display-name>
+      </train-stop>
+    </view>
+    <view id="trainStep2">
+      <page>/fragments/trainStep2.jsff</page>
+      <train-stop>
+        <display-name>Step 2</display-name>
+      </train-stop>
+    </view>
+    <view id="trainStep3">
+      <page>/fragments/trainStep3.jsff</page>
+      <train-stop>
+        <display-name>Step 3</display-name>
+      </train-stop>
+    </view>
+    <train/>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

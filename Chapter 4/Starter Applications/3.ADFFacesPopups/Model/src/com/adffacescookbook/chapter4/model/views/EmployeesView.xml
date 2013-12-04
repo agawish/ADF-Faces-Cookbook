@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="Employee.EMPLOYEE_ID, 
+       Employee.FIRST_NAME, 
+       Employee.LAST_NAME, 
+       Employee.EMAIL, 
+       Employee.PHONE_NUMBER, 
+       Employee.HIRE_DATE, 
+       Employee.JOB, 
+       Employee.SALARY, 
+       Employee.COMMISSION_PCT, 
+       Employee.MANAGER_ID, 
+       Employee.DEPARTMENT_ID, 
+       Employee.IMAGE, 
+       Employee.COLOR, 
+       Employee.BIOGRAPHY, 
+       Employee.CODE_SAMPLE"
+  FromList="EMPLOYEES Employee">
+  <ViewAccessor
+    Name="DepartmentsView1"
+    ViewObjectName="com.adffacescookbook.chapter4.model.views.DepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EmployeesView1"
+    ViewObjectName="com.adffacescookbook.chapter4.model.views.EmployeesView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentsView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Employee"
+    Entity="com.adffacescookbook.chapter4.model.entity.Employee"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="Employee"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="Employee"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="Employee"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="Employee"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="PhoneNumber"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNumber"
+    EntityUsage="Employee"
+    AliasName="PHONE_NUMBER"/>
+  <ViewAttribute
+    Name="HireDate"
+    PrecisionRule="true"
+    EntityAttrName="HireDate"
+    EntityUsage="Employee"
+    AliasName="HIRE_DATE"/>
+  <ViewAttribute
+    Name="Job"
+    PrecisionRule="true"
+    EntityAttrName="Job"
+    EntityUsage="Employee"
+    AliasName="JOB"/>
+  <ViewAttribute
+    Name="Salary"
+    PrecisionRule="true"
+    EntityAttrName="Salary"
+    EntityUsage="Employee"
+    AliasName="SALARY"/>
+  <ViewAttribute
+    Name="CommissionPct"
+    PrecisionRule="true"
+    EntityAttrName="CommissionPct"
+    EntityUsage="Employee"
+    AliasName="COMMISSION_PCT"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="Employee"
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="Employee"
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="Employee"
+    AliasName="IMAGE"/>
+  <ViewAttribute
+    Name="Color"
+    PrecisionRule="true"
+    EntityAttrName="Color"
+    EntityUsage="Employee"
+    AliasName="COLOR"/>
+  <ViewAttribute
+    Name="FavColor"
+    PrecisionRule="true"
+    EntityAttrName="FavColor"
+    EntityUsage="Employee"
+    AliasName="FAV_COLOR"
+    IsSelected="false"
+    IsQueriable="false"
+    IsPersistent="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.adffacescookbook.chapter4.model.views.EmployeesView.FavColor_LABEL"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Biography"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Biography"
+    EntityUsage="Employee"
+    AliasName="BIOGRAPHY"/>
+  <ViewAttribute
+    Name="CodeSample"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="CodeSample"
+    EntityUsage="Employee"
+    AliasName="CODE_SAMPLE"/>
+  <ViewLinkAccessor
+    Name="DepartmentsView"
+    ViewLink="com.adffacescookbook.chapter4.model.views.vlinks.DepartmentsEmployeesFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="com.adffacescookbook.chapter4.model.views.vlinks.EmployeesEmployeesFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.adffacescookbook.chapter4.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

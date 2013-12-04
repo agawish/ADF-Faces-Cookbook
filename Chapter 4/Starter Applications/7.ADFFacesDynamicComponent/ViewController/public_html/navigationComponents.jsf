@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="navigationComponents.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:panelGroupLayout id="pgl1" layout="vertical">
+                        <af:button text="Go to Inputs page" id="b1" action="inputs"/>
+                        <af:button text="Go to oracle.com" id="b2" destination="http://www.oracle.com"
+                                   targetFrame="_blank"/>
+                        <af:link text="Go to Outputs page" id="l1" action="outputs"/>
+                        <af:link text="Go to packtpub.com" id="l2" destination="http://www.packtpub.com"
+                                 targetFrame="_blank"/>
+                        <af:button text="Download readme file" id="b3">
+                            <af:fileDownloadActionListener contentType="text/plain" filename="readme.txt"
+                                                           method="#{navigationBean.downloadReadmeFile}"/>
+                        </af:button>
+                        <af:separator id="s1"/>
+                        <af:menuBar id="mb1" value="#{root_menu}" var="menuItem">
+                            <f:facet name="nodeStamp">
+                                <af:commandNavigationItem text="#{menuItem.label}" action="#{menuItem.doAction}"
+                                                          id="cni1"/>
+                            </f:facet>
+                        </af:menuBar>
+                        <af:breadCrumbs id="bc1" value="#{root_menu}" var="crumbItem">
+                            <f:facet name="nodeStamp">
+                                <af:commandNavigationItem text="#{crumbItem.label}" id="cni4"
+                                                          action="#{crumbItem.doAction}"/>
+                            </f:facet>
+                        </af:breadCrumbs>
+                        <af:navigationPane id="np1" value="#{root_menu}" var="item" hint="bar">
+                            <f:facet name="nodeStamp">
+                                <af:commandNavigationItem text="#{item.label}" action="#{item.doAction}" id="cni2"/>
+                            </f:facet>
+                        </af:navigationPane>
+                        <af:navigationPane id="np2" value="#{root_menu}" var="item" level="1">
+                            <f:facet name="nodeStamp">
+                                <af:commandNavigationItem text="#{item.label}" action="#{item.doAction}" id="cni3"/>
+                            </f:facet>
+                        </af:navigationPane>
+                        <af:region value="#{bindings.taskflowdefinition1.regionModel}" id="r1"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

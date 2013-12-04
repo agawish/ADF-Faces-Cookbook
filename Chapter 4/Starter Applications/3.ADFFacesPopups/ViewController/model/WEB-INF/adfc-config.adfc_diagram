@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View17">
+      <property
+         name="activityId">inputComponents</property>
+      <property
+         name="page">/inputComponents.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>inputComponents&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">229.09766</property>
+      <property
+         name="x">158.03027</property>
+   </View>
+</SDM>

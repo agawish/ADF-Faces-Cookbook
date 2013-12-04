@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffacescookbook.chapter4.view" ClientType="Generic">
+    <definitionFactories>
+        <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+                 className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+        <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    </definitionFactories>
+    <pageMap>
+        <page path="/inputComponents.jsf" usageId="com_adffacescookbook_chapter4_view_inputComponentsPageDef"/>
+        
+        <page path="/employeesPopup.jsf" usageId="com_adffacescookbook_chapter4_view_employeesPopupPageDef"/>
+    </pageMap>
+    <pageDefinitionUsages>
+        <page id="com_adffacescookbook_chapter4_view_inputComponentsPageDef"
+              path="com.adffacescookbook.chapter4.view.pageDefs.inputComponentsPageDef"/>
+        <page id="com_adffacescookbook_chapter4_view_employeesPopupPageDef"
+              path="com.adffacescookbook.chapter4.view.pageDefs.employeesPopupPageDef"/>
+    </pageDefinitionUsages>
+    <dataControlUsages>
+        <BC4JDataControl id="Chapter4AppModuleDataControl" Package="com.adffacescookbook.chapter4.model"
+                         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                         SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                         SupportsSortCollection="true" Configuration="Chapter4AppModuleLocal" syncMode="Immediate"
+                         xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    </dataControlUsages>
+</Application>

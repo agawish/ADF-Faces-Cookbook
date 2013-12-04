@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="windows-1252" ?>
-<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
-  <pagetemplate-jsp-ui-def>/templates/responsiveHrTemplate.jsf</pagetemplate-jsp-ui-def>
-  <pagetemplate-jsp-ui-def>/templates/defaultHrTemplate.jsf</pagetemplate-jsp-ui-def>
-</pageTemplateDefs>
