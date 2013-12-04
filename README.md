@@ -5,4 +5,5 @@ This is the github repository for ADF Faces Cookbook, and it'll contain all the 
 
 Code materials for ADF Faces Cookbook
 
-Chapter 6 content will be available on Tuesday 06 November 2013
+Chapter 4 content will be available on Wednesday 04 December 2013
+Chapter 6 content will be available on Wednesday 06 December 2013
