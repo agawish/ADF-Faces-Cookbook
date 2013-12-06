@@ -1,4 +1,4 @@
-ADF Faces Cookbook - Chapter 4
+ADF Faces Cookbook - Chapter 6
 ===============================
 # Before You Start
 
