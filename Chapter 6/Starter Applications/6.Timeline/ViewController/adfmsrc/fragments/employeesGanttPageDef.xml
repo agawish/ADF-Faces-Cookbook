@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesGanttPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TasksView1" RangeSize="-1" DataControl="HrAppModuleDataControl" id="TasksView1Iterator"/>
+  </executables>
+  <bindings>
+    <gantt IterBinding="TasksView1Iterator" id="TasksView1" xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <ganttDataMap>
+        <nodeDefinition DefName="com.adffaces.chapter6.model.views.TasksView" type="Tasks">
+          <AttrNames>
+            <Item Value="TaskId" type="taskId"/>
+            <Item Value="StartDate" type="startTime"/>
+            <Item Value="TaskType" type="taskType"/>
+            <Item Value="EndDate" type="endTime"/>
+            <Item Value="Percentage" type="percentComplete"/>
+            <Item Value="CriticalBoolean" type="critical"/>
+            <Item Value="LastName" type="label"/>
+          </AttrNames>
+          <Accessors>
+            <Item Value="TasksView" type="subTasks"/>
+          </Accessors>
+        </nodeDefinition>
+        <nodeDefinition type="SubTasks" DefName="com.adffaces.chapter6.model.views.TasksView">
+          <AttrNames>
+            <Item Value="TaskId" type="taskId"/>
+            <Item Value="StartDate" type="startTime"/>
+            <Item Value="TaskType" type="subTaskType"/>
+            <Item Value="EndDate" type="endTime"/>
+          </AttrNames>
+        </nodeDefinition>
+        <nodeDefinition type="Dependents">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="SplitTasks">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="RecurringTasks">
+          <AttrNames/>
+        </nodeDefinition>
+      </ganttDataMap>
+    </gantt>
+  </bindings>
+</pageDefinition>

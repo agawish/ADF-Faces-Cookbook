@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesTimelinePageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesView1" RangeSize="-1" DataControl="HrAppModuleDataControl" id="EmployeesView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="com.adffaces.chapter6.model.views.EmployeesView" Name="EmployeesView1">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="HireDate"/>
+          <Item Value="Image"/>
+          <Item Value="LastName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

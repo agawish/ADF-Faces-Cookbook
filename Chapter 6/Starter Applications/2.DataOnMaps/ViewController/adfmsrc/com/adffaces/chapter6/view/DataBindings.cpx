@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.chapter6.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/templates/defaultHrTemplate.jsf" usageId="com_adffaces_chapter6_view_defaultHrTemplatePageDef"/>
+    <page path="/fragments/employeesGraphs.jsff" usageId="com_adffaces_chapter6_view_employeesGraphsPageDef"/>
+    <page path="/fragments/employeesGauge.jsff" usageId="com_adffaces_chapter6_view_employeesGaugePageDef"/>
+    <page path="/employeesDashboard.jsf" usageId="com_adffaces_chapter6_view_employeesDashboardPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_chapter6_view_defaultHrTemplatePageDef" path="templates.defaultHrTemplatePageDef"/>
+    <page id="com_adffaces_chapter6_view_employeesGraphsPageDef" path="fragments.employeesGraphsPageDef"/>
+    <page id="com_adffaces_chapter6_view_employeesGaugePageDef" path="fragments.employeesGaugePageDef"/>
+    <page id="com_adffaces_chapter6_view_employeesDashboardPageDef"
+          path="com.adffaces.chapter6.view.pageDefs.employeesDashboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAppModuleDataControl" Package="com.adffaces.chapter6.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

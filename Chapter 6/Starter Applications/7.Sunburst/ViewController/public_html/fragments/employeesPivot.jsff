@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:panelGroupLayout id="pgl1">
+    <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="50">
+      <f:facet name="first">
+        <dvt:pivotFilterBar id="pt1pivotFilterBar" value="#{bindings.EmployeesCountInDepartment1.pivotFilterBarModel}"
+                            modelName="pt1Model"/>
+      </f:facet>
+      <f:facet name="second">
+        <dvt:pivotTable id="pt1" value="#{bindings.EmployeesCountInDepartment1.pivotTableModel}" var="cellData"
+                        varStatus="cellStatus" splitMode="enabled" modelName="pt1Model" styleClass="AFStretchWidth">
+          <dvt:headerCell>
+            <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
+              <f:facet name="DataLayer">
+                <af:outputText value="#{cellData.label}" id="ot1"/>
+              </f:facet>
+              <f:facet name="RegionName">
+                <af:outputText value="#{cellData.dataValue}" id="ot2"/>
+              </f:facet>
+              <f:facet name="CountryName">
+                <af:outputText value="#{cellData.dataValue}" id="ot3"/>
+              </f:facet>
+              <f:facet name="City">
+                <af:outputText value="#{cellData.dataValue}" id="ot4"/>
+              </f:facet>
+              <f:facet name="DepartmentName">
+                <af:outputText value="#{cellData.dataValue}" id="ot5"/>
+              </f:facet>
+              <f:facet name="Default">
+                <af:outputText value="#{cellData.dataValue}" id="ot6"/>
+              </f:facet>
+            </af:switcher>
+          </dvt:headerCell>
+          <dvt:dataCell>
+            <af:switcher facetName="#{cellStatus.members.DataLayer.value}" defaultFacet="Default" id="s2">
+              <f:facet name="NumberOfEmployees">
+                <af:outputText value="#{cellData.dataValue}" id="ot7">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.EmployeesCountInDepartment1.hints.NumberOfEmployees.format}"/>
+                </af:outputText>
+              </f:facet>
+              <f:facet name="Default">
+                <af:outputText value="#{cellData.dataValue}" id="ot8"/>
+              </f:facet>
+            </af:switcher>
+          </dvt:dataCell>
+        </dvt:pivotTable>
+      </f:facet>
+    </af:panelSplitter>
+  </af:panelGroupLayout>
+</ui:composition>

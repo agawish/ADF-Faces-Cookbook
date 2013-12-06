@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesMapPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesCountInCities1" RangeSize="-1" DataControl="HrAppModuleDataControl"
+              id="EmployeesCountInCities1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesCountInCities1Iterator" id="EmployeesCountInCities1">
+      <nodeDefinition DefName="com.adffaces.chapter6.model.views.EmployeesCountInCities"
+                      Name="EmployeesCountInCities10">
+        <AttrNames>
+          <Item Value="NumberOfEmployees"/>
+          <Item Value="RegionCode"/>
+          <Item Value="RegionName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

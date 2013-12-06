@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+/* line 23, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFDefaultFontFamily:alias {
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+/* line 27, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFDefaultFont:alias {
+  font-size: 13.5pt;
+}
+
+/* line 32, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFTextColor:alias {
+  color: #878e83;
+}
+
+/* line 36, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFTextTertiaryColor:alias {
+  color: #878e83;
+}
+
+/* line 40, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFTextSecondaryColor:alias {
+  color: #6b7167;
+}
+
+/* line 44, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFLabelColor:alias {
+  color: #6b7167;
+}
+
+/* line 48, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFTextPrimaryColor:alias {
+  color: #878e83;
+}
+
+/* line 52, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFGridCellBorderColor:alias {
+  color: white;
+}
+
+/* line 56, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFTableCellDataHGrid:alias {
+  border: 0px;
+}
+
+/* line 60, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+.AFTableCellDataVGrid:alias {
+  border: 0px;
+}
+
+/* line 66, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|table af|column::column-header-cell {
+  border: 0px;
+  border-color: #007897;
+  border-bottom: 2px solid #007897;
+  height: 30px;
+  color: #007897;
+  background-color: white;
+}
+/* line 75, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|table::data-row {
+  height: 30px !important;
+}
+
+/* line 80, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|link {
+  color: #ffffff;
+}
+/* line 82, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|link.red-button {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+/* line 86, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|link.red-button:hover, af|link.red-button:focus, af|link.red-button:active, af|link.red-button.active {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+/* line 93, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|link.blue-button {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+/* line 97, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|link.blue-button:hover, af|link.blue-button:focus, af|link.blue-button:active, af|link.blue-button.active {
+  color: #ffffff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}
+
+/*
+af|panelSpringboard::item {
+    background-color: #007b9d; 
+    color: #FFF; 
+    height: 110px;
+    width: 200px;
+    
+}
+af|panelSpringboard::item:hover, af|panelSpringboard::item:selected {
+    background-color: #FFF; 
+    color: #007b9d; 
+}
+
+af|panelSpringboard:strip af|panelSpringboard::item:selected {
+    background-color: #FFF; 
+    color: #007b9d; 
+}
+
+af|panelSpringboard::item-text {
+    color: #FFF; 
+    width: 180px;
+}
+af|panelSpringboard:strip af|panelSpringboard::item-text:selected{
+    background-color: #FFF; 
+    color: #007b9d; 
+    height: auto;
+	width: 0;
+}
+
+af|panelSpringboard {
+    background-color: #007b9d; 
+}
+*/
+/* line 140, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|panelSpringboard {
+  background-color: #007b9d;
+}
+/* line 143, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|panelSpringboard:strip af|panelSpringboard::item:selected {
+  background-color: #FFF;
+  color: #007b9d;
+}
+/* line 147, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|panelSpringboard::item {
+  background-color: #007b9d;
+  color: #FFF;
+  height: 110px;
+  width: 200px;
+}
+/* line 153, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|panelSpringboard::item:selected, af|panelSpringboard::item:hover {
+  background-color: #FFF;
+  color: #007b9d;
+}
+/* line 158, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|panelSpringboard::item-text {
+  color: #FFF;
+  width: 180px;
+}
+/* line 162, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|panelSpringboard::item-text:selected {
+  background-color: #FFF;
+  color: #007b9d;
+}
+
+/* Styles for Graphs */
+/* line 170, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-sliceLabel {
+  -tr-font-size: 13px;
+}
+
+/* line 173, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-legendText {
+  -tr-font-size: 15px;
+}
+
+/* line 176, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-o1TickLabel {
+  -tr-font-size: 15px;
+}
+
+/* line 179, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-pieLabel {
+  -tr-font-size: 15px;
+}
+
+/* line 182, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-lowerLabelFrame {
+  -tr-border-color: #006e8b;
+  -tr-background-color: #007b9d;
+}
+
+/* line 186, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-bottomLabel {
+  -tr-color: #FFF;
+  -tr-font-weight: bold;
+  -tr-font-size: 13px;
+}
+
+/* line 191, C:/Users/amr/dev/myworkspaces/adf/mywork/Chapter6/GraphsAndGauges/ViewController/public_html/skins/hrBlue/hrBlue.scss */
+af|dvt-metricLabel {
+  -tr-color: #fff;
+}

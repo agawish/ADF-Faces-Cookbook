@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TasksTasksFk1Link"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  EntityAssociation="com.adffaces.chapter6.model.entity.TasksTasksFk1Assoc">
+  <ViewLinkDefEnd
+    Name="ParentTaskIdTasksView"
+    Cardinality="1"
+    Source="true"
+    Owner="com.adffaces.chapter6.model.views.TasksView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ParentTaskIdTasksView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter6.model.views.TasksView.TaskId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TasksEOView"
+    Cardinality="-1"
+    Owner="com.adffaces.chapter6.model.views.TasksEOView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TasksEOView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter6.model.views.TasksEOView.ParentTaskId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

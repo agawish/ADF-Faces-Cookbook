@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesSunburstPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesCountInRegions" RangeSize="-1" DataControl="HrAppModuleDataControl"
+              id="EmployeesCountInRegionsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesCountInRegionsIterator" id="EmployeesCountInRegions">
+      <nodeDefinition DefName="com.adffaces.chapter6.model.views.EmployeesCountInCities"
+                      Name="EmployeesCountInRegions0">
+        <AttrNames>
+          <Item Value="RegionId"/>
+          <Item Value="RegionName"/>
+          <Item Value="RegionCode"/>
+          <Item Value="NumberOfEmployees"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="EmployeesCountInDepartments"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.adffaces.chapter6.model.views.EmployeesCountInDepartments"
+                      Name="EmployeesCountInRegions1">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="RegionId"/>
+          <Item Value="EmployeesCount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

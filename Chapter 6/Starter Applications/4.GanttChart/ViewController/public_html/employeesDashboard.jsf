@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['com.adffaces.chapter6.view.ViewControllerBundle']}"/>
+    <af:document title="employeesDashboard.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/templates/defaultHrTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="Left"/>
+                <f:facet name="Center">
+                    <af:panelSpringboard id="ps1" displayMode="grid">
+                        <af:showDetailItem id="sdi1" text="#{res.GRAPHS_AND_GAUGES}" icon="/images/pie-chart.png">
+                            <af:panelDashboard id="pd1" columns="2" rowHeight="300px" styleClass="AFStretchWidth">
+                                <af:panelBox text="#{res.GRAPHS}" id="pb1">
+                                    <af:region value="#{bindings.employeesgraphflow1.regionModel}" id="r2"/>
+                                    <af:componentDragSource/>
+                                </af:panelBox>
+                                <af:panelBox text="#{res.GAUGE}" id="pb2">
+                                    <af:region value="#{bindings.employeesgaugeflow1.regionModel}" id="r1"/>
+                                    <af:componentDragSource/>
+                                </af:panelBox>
+                            </af:panelDashboard>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="#{res.MAP}" id="sdi2" icon="/images/location.png">
+                            <af:panelGroupLayout id="pgl1" halign="center" layout="vertical">
+                                <af:region value="#{bindings.employeesmapflow1.regionModel}" id="r3"/>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="#{res.PIVOT_TABLE}" id="sdi3" icon="/images/trends.png"
+                                           stretchChildren="first">
+                            <af:region value="#{bindings.employeespivotflow1.regionModel}" id="r4"/>
+                        </af:showDetailItem>
+                    </af:panelSpringboard>
+                </f:facet>
+                <f:facet name="Right"/>
+                <f:attribute name="leftColumnWidth" value="0px"/>
+                <f:attribute name="rightColumnWidth" value="0px"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

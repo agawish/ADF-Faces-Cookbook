@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employees-sunburst-flow">
+    <default-activity>employeesSunburst</default-activity>
+    <view id="employeesSunburst">
+      <page>/fragments/employeesSunburst.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

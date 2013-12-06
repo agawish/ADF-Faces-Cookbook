@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:panelFormLayout id="pfl1">
+    <af:inputText value="#{bindings.DepartmentName.inputValue}" label="#{bindings.DepartmentName.hints.label}"
+                  required="#{bindings.DepartmentName.hints.mandatory}" readOnly="true"
+                  columns="#{bindings.DepartmentName.hints.displayWidth}"
+                  maximumLength="#{bindings.DepartmentName.hints.precision}"
+                  shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it1">
+      <f:validator binding="#{bindings.DepartmentName.validator}"/>
+    </af:inputText>
+    <dvt:gauge id="gauge1" value="#{bindings.EmployeesPercentage.inputValue}" gaugeType="DIAL" minValue="0"
+               maxValue="100" animationOnDisplay="auto">
+      <dvt:gaugeBackground>
+        <dvt:specialEffects/>
+      </dvt:gaugeBackground>
+      <dvt:thresholdSet>
+        <dvt:threshold fillColor="#d62800" thresholdMaxValue="5"/>
+        <dvt:threshold fillColor="#ffcf21" thresholdMaxValue="20"/>
+        <dvt:threshold fillColor="#84ae31"/>
+      </dvt:thresholdSet>
+      <dvt:gaugeFrame/>
+      <dvt:indicator/>
+      <dvt:indicatorBase/>
+      <dvt:gaugePlotArea/>
+      <dvt:tickLabel/>
+      <dvt:tickMark/>
+      <dvt:topLabel position="LP_NONE" text="#{bindings.EmployeesPercentage.hints.label}"/>
+      <dvt:bottomLabel position="LP_BELOW_GAUGE" text="#{bindings.EmployeesPercentage.hints.label}"/>
+      <dvt:metricLabel position="LP_WITH_BOTTOM_LABEL">
+        <af:convertNumber pattern="#{bindings.EmployeesPercentage.format}"/>
+      </dvt:metricLabel>
+    </dvt:gauge>
+    <f:facet name="footer">
+      <af:panelGroupLayout layout="horizontal" id="pgl1">
+        <af:button actionListener="#{bindings.First.execute}" text="First" disabled="#{!bindings.First.enabled}"
+                   partialSubmit="true" id="b1"/>
+        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+        <af:button actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                   partialSubmit="true" id="b3"/>
+        <af:button actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                   partialSubmit="true" id="b4"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+</ui:composition>

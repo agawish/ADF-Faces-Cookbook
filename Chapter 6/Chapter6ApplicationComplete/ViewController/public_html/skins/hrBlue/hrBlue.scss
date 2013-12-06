@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+@import 'compass';
+
+
+// Defining Generic Variables that will be used
+// This should define any reference that has a hight chance of changing in the future.
+$defaultFontSize: 27pt;
+$defaultFontFamily: 'Ubuntu Condensed', sans-serif;
+$defaultTextColor: #878e83;
+$secondaryTextColor: #6B7167;
+$defaultBorderColor: #fff;
+$tableHeaderColor: #007897;
+$tableRowHeight: 30px;
+$tableBorder: 0px;
+
+
+// Use Variables by appending $ and the name of the variable
+
+.AFDefaultFontFamily:alias {
+    font-family: $defaultFontFamily;
+}
+
+.AFDefaultFont:alias {
+    // you can use mathematical operations with your variables
+    font-size: $defaultFontSize / 2;
+}
+
+.AFTextColor:alias {
+    color: $defaultTextColor;
+}
+
+.AFTextTertiaryColor:alias {
+    color: $defaultTextColor;
+}
+
+.AFTextSecondaryColor:alias {
+    color: $secondaryTextColor;
+}
+
+.AFLabelColor:alias {
+    color: $secondaryTextColor;
+}
+
+.AFTextPrimaryColor:alias {
+    color: $defaultTextColor;
+}
+
+.AFGridCellBorderColor:alias {
+    color: $defaultBorderColor; 
+}
+
+.AFTableCellDataHGrid:alias {
+    border: $tableBorder; 
+}
+
+.AFTableCellDataVGrid:alias {
+    border: $tableBorder; 
+}
+// You can use nested component 
+af|table{
+    & af|column {
+        &::column-header-cell{
+            border: $tableBorder;
+            border-color: $tableHeaderColor;
+            border-bottom: 2px solid $tableHeaderColor;
+            height: $tableRowHeight;
+            color: $tableHeaderColor;
+            background-color: white;
+        }
+    }
+    &::data-row{
+        height: $tableRowHeight !important;
+    }
+}
+af|outputText, af|inputText::content{
+    font-size:18px;
+}
+
+af|link{
+	color: #ffffff;
+    &.red-button{
+		background-color: #d9534f;
+		border-color: #d43f3a;
+  
+		&:hover,&:focus,&:active,&.active{
+                        color: #ffffff;
+			background-color: #d2322d;
+			border-color: #ac2925;
+		
+		}
+    }
+    &.blue-button{
+		background-color: #5bc0de;
+		border-color: #46b8da;
+  
+		&:hover,&:focus,&:active,&.active{
+                        color: #ffffff;
+			background-color: #39b3d7;
+			border-color: #269abc;
+		
+		}
+    }
+}
+
+/*
+af|panelSpringboard::item {
+    background-color: #007b9d; 
+    color: #FFF; 
+    height: 110px;
+    width: 200px;
+    
+}
+af|panelSpringboard::item:hover, af|panelSpringboard::item:selected {
+    background-color: #FFF; 
+    color: #007b9d; 
+}
+
+af|panelSpringboard:strip af|panelSpringboard::item:selected {
+    background-color: #FFF; 
+    color: #007b9d; 
+}
+
+af|panelSpringboard::item-text {
+    color: #FFF; 
+    width: 180px;
+}
+af|panelSpringboard:strip af|panelSpringboard::item-text:selected{
+    background-color: #FFF; 
+    color: #007b9d; 
+    height: auto;
+	width: 0;
+}
+
+af|panelSpringboard {
+    background-color: #007b9d; 
+}
+*/
+
+af|panelSpringboard {
+    background-color: #007b9d; 
+
+    &:strip af|panelSpringboard::item:selected {
+        background-color: #FFF; 
+        color: #007b9d; 
+    }
+    &::item{
+        background-color: #007b9d; 
+        color: #FFF; 
+        width: 200px;
+		
+	&:selected,&:hover{
+            background-color: #FFF; 
+            color: #007b9d; 
+        }
+    }
+    &::item-text{
+        color: #FFF; 
+        width: 180px;
+		
+        &:selected{
+            background-color: #FFF; 
+            color: #007b9d; 
+        }
+    }
+}
+
+/* Styles for Graphs */
+af|dvt-sliceLabel {
+    -tr-font-size: 13px; 
+}
+af|dvt-legendText {
+    -tr-font-size: 15px; 
+}
+af|dvt-o1TickLabel {
+    -tr-font-size: 15px; 
+}
+af|dvt-pieLabel {
+    -tr-font-size: 15px; 
+}
+af|dvt-lowerLabelFrame {
+    -tr-border-color: #006e8b; 
+    -tr-background-color: #007b9d; 
+}
+af|dvt-bottomLabel {
+    -tr-color: #FFF; 
+    -tr-font-weight: bold; 
+    -tr-font-size: 13px; 
+}
+af|dvt-metricLabel {
+    -tr-color: #fff; 
+}
+af|dvt-gauge{
+    width:300px;
+}

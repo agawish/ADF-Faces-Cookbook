@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+  <dvt:projectGantt id="gantt1" value="#{bindings.TasksView1.projectGanttModel}"
+                    dataChangeListener="#{bindings.TasksView1.projectGanttModel.processDataChanged}" var="row"
+                    startTime="2013-11-02" endTime="2014-01-31" styleClass="AFStretchWidth">
+    <f:facet name="major">
+      <dvt:timeAxis scale="weeks" id="ta1"/>
+    </f:facet>
+    <f:facet name="minor">
+      <dvt:timeAxis scale="days" id="ta2"/>
+    </f:facet>
+    <f:facet name="nodeStamp">
+      <af:column sortProperty="#{bindings.TasksView1.hints.Label.name}" sortable="false"
+                 headerText="#{bindings.TasksView1.hints.Label.label}" id="c1">
+        <af:outputText value="#{row.Label}" shortDesc="#{bindings.TasksView1.hints.Label.tooltip}" id="ot1"/>
+      </af:column>
+    </f:facet>
+  </dvt:projectGantt>
+</ui:composition>

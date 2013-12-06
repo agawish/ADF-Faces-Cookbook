@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <dvt:timeline id="tl1" startTime="2001-01-01" endTime="2013-11-03" styleClass="AFStretchWidth">
+    <dvt:timelineSeries id="ts1" var="evt" value="#{bindings.EmployeesView1.collectionModel}">
+      <dvt:timelineItem value="#{evt.HireDate}" id="ti1">
+        <af:panelGroupLayout id="pg1" layout="horizontal">
+          <af:image id="img1" source="/images/#{evt.Image}"/>
+          <af:spacer width="3" id="s1"/>
+          <af:panelGroupLayout id="pg2" layout="vertical">
+            <af:outputText id="ot1" value="#{evt.FirstName}" noWrap="true"/>
+            <af:outputText id="ot2" value="#{evt.LastName}" noWrap="true"/>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </dvt:timelineItem>
+    </dvt:timelineSeries>
+    <dvt:timeAxis id="ta1" scale="quarters"/>
+    <dvt:timelineOverview id="ov1">
+      <dvt:timeAxis id="ta2" scale="years"/>
+    </dvt:timelineOverview>
+  </dvt:timeline>
+</ui:composition>

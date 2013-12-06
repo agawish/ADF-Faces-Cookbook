@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesDashboardPageDef"
+                Package="com.adffaces.chapter6.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <taskFlow id="employeesgaugeflow1" taskFlowId="/WEB-INF/employees-gauge-flow.xml#employees-gauge-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="employeesgraphflow1" taskFlowId="/WEB-INF/employees-graph-flow.xml#employees-graph-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="employeesmapflow1" taskFlowId="/WEB-INF/employees-map-flow.xml#employees-map-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="employeespivotflow1" taskFlowId="/WEB-INF/employees-pivot-flow.xml#employees-pivot-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="employeestasksganttflow1"
+              taskFlowId="/WEB-INF/employees-tasks-gantt-flow.xml#employees-tasks-gantt-flow" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="employeesorganizationchartflow1"
+              taskFlowId="/WEB-INF/employees-organization-chart-flow.xml#employees-organization-chart-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="employeestimelineflow1" taskFlowId="/WEB-INF/employees-timeline-flow.xml#employees-timeline-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

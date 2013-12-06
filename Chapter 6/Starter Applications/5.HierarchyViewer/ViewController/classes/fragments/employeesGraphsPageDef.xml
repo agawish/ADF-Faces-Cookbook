@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesGraphsPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesCountInDepartments" RangeSize="-1" DataControl="HrAppModuleDataControl"
+              id="EmployeesCountInDepartmentsIterator"/>
+    <iterator Binds="EmployeesPercentageInDepartments" RangeSize="-1" DataControl="HrAppModuleDataControl"
+              id="EmployeesPercentageInDepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <graph IterBinding="EmployeesCountInDepartmentsIterator" id="EmployeesCountInDepartments"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap convert="false" leafOnly="true">
+        <series>
+          <data>
+            <item value="EmployeesCount"/>
+          </data>
+        </series>
+        <groups>
+          <item value="DepartmentName"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <graph IterBinding="EmployeesPercentageInDepartmentsIterator" id="EmployeesPercentageInDepartments"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="PIE">
+      <graphDataMap convert="false" leafOnly="true">
+        <series>
+          <item value="DepartmentName"/>
+        </series>
+        <groups>
+          <data>
+            <item value="EmployeesPercentage"/>
+          </data>
+        </groups>
+      </graphDataMap>
+    </graph>
+  </bindings>
+</pageDefinition>

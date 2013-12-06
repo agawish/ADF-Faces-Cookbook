@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <dvt:thematicMap id="tm1" basemap="world">
+    <dvt:areaLayer layer="continents" id="al1">
+      <dvt:areaDataLayer id="dl1" value="#{bindings.EmployeesCountInCities1.collectionModel}" var="row">
+        <dvt:areaLocation name="#{row.RegionCode}" id="al2">
+          <dvt:area id="a1">
+            <dvt:attributeGroups id="ag1" value="#{row.NumberOfEmployees}" type="color"
+                                 label="#{row.NumberOfEmployees} Employees" />
+          </dvt:area>
+        </dvt:areaLocation>
+      </dvt:areaDataLayer>
+    </dvt:areaLayer>
+    <dvt:legend id="l1">
+      <dvt:legendSection source="al1:dl1:ag1" id="ls1"/>
+    </dvt:legend>
+  </dvt:thematicMap>
+</ui:composition>

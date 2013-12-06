@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TasksView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="TasksEO.TASK_ID, 
+       TasksEO.LABEL, 
+       TasksEO.ASSIGNEE, 
+       TasksEO.START_DATE, 
+       TasksEO.END_DATE, 
+       TasksEO.PERCENTAGE, 
+       TasksEO.PARENT_TASK_ID, 
+       TasksEO.CRITICAL, 
+       EmployeesEO.FIRST_NAME, 
+       EmployeesEO.LAST_NAME, 
+       EmployeesEO.EMPLOYEE_ID, 
+       TasksEO.TASK_TYPE"
+  FromList="TASKS TasksEO, EMPLOYEES EmployeesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  Where="TasksEO.ASSIGNEE = EmployeesEO.EMPLOYEE_ID">
+  <ViewAccessor
+    Name="EmployeesCountInCities1"
+    ViewObjectName="com.adffaces.chapter6.model.views.EmployeesCountInCities"
+    RowLevelBinds="true"/>
+  <EntityUsage
+    Name="TasksEO"
+    Entity="com.adffaces.chapter6.model.entity.TasksEO"/>
+  <EntityUsage
+    Name="EmployeesEO"
+    Entity="com.adffaces.chapter6.model.entity.EmployeesEO"
+    Association="com.adffaces.chapter6.model.entity.TasksEmployeesFk1Assoc"
+    AssociationEnd="com.adffaces.chapter6.model.entity.TasksEmployeesFk1Assoc.EmployeesEO"
+    SourceUsage="com.adffaces.chapter6.model.views.TasksView.TasksEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="com.adffaces.chapter6.model.entity.TasksEO.Assignee"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="com.adffaces.chapter6.model.entity.EmployeesEO.EmployeeId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="TaskId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TaskId"
+    EntityUsage="TasksEO"
+    AliasName="TASK_ID"/>
+  <ViewAttribute
+    Name="Label"
+    PrecisionRule="true"
+    EntityAttrName="Label"
+    EntityUsage="TasksEO"
+    AliasName="LABEL"/>
+  <ViewAttribute
+    Name="Assignee"
+    PrecisionRule="true"
+    EntityAttrName="Assignee"
+    EntityUsage="TasksEO"
+    AliasName="ASSIGNEE"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="TasksEO"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="TasksEO"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="Percentage"
+    PrecisionRule="true"
+    EntityAttrName="Percentage"
+    EntityUsage="TasksEO"
+    AliasName="PERCENTAGE"/>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="TasksEO"
+    AliasName="TYPE"
+    IsQueriable="false"
+    IsPersistent="false"/>
+  <ViewAttribute
+    Name="ParentTaskId"
+    PrecisionRule="true"
+    EntityAttrName="ParentTaskId"
+    EntityUsage="TasksEO"
+    AliasName="PARENT_TASK_ID"/>
+  <ViewAttribute
+    Name="Critical"
+    PrecisionRule="true"
+    EntityAttrName="Critical"
+    EntityUsage="TasksEO"
+    AliasName="CRITICAL"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="EmployeesEO"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="EmployeesEO"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeesEO"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="CriticalBoolean"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[Critical == 'true']]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TaskType"
+    PrecisionRule="true"
+    EntityAttrName="TaskType"
+    EntityUsage="TasksEO"
+    AliasName="TASK_TYPE"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="TaskId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="TasksEOView"
+    ViewLink="com.adffaces.chapter6.model.views.TasksTasksFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

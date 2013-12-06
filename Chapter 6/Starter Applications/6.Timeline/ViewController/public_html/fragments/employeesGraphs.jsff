@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.adffaces.chapter6.view.ViewControllerBundle']}"/>
+  <af:panelTabbed id="pt1" dimensionsFrom="parent">
+    <af:showDetailItem id="sdi1" stretchChildren="first" text="#{viewcontrollerBundle.BAR_GRAPH}">
+      <dvt:barGraph id="graph1" value="#{bindings.EmployeesCountInDepartments.graphModel}" subType="BAR_VERT_CLUST"
+                    threeDEffect="true" animationOnDisplay="zoom" animationDuration="2000">
+        <dvt:background>
+          <dvt:specialEffects/>
+        </dvt:background>
+        <dvt:graphPlotArea/>
+        <dvt:seriesSet>
+          <dvt:series/>
+        </dvt:seriesSet>
+        <dvt:o1Axis/>
+        <dvt:y1Axis/>
+        <dvt:legendArea automaticPlacement="AP_NEVER"/>
+        <dvt:attributeFormat name="EmployeesCount" id="af1">
+          <af:convertNumber pattern="#{bindings.EmployeesCountInDepartments.hints.EmployeesCount.format}"
+                            groupingUsed="false" integerOnly="true"/>
+        </dvt:attributeFormat>
+        <dvt:markerText>
+          <dvt:y1Format id="y1Format1" autoPrecision="off"/>
+        </dvt:markerText>
+      </dvt:barGraph>
+    </af:showDetailItem>
+    <af:showDetailItem id="sdi2" stretchChildren="first" text="#{viewcontrollerBundle.PIE_GRAPH}">
+      <dvt:pieGraph id="graph2" value="#{bindings.EmployeesPercentageInDepartments.graphModel}" subType="PIE"
+                    threeDEffect="true" animationOnDisplay="zoom" animationDuration="2000"
+                    interactiveSliceBehavior="explode explodeAll ">
+        <dvt:background>
+          <dvt:specialEffects/>
+        </dvt:background>
+        <dvt:graphPieFrame/>
+        <dvt:seriesSet>
+          <dvt:series/>
+        </dvt:seriesSet>
+        <dvt:sliceLabel autoPrecision="off"/>
+        <dvt:pieLabel/>
+        <dvt:legendArea automaticPlacement="AP_NEVER"/>
+        <dvt:attributeFormat name="EmployeesPercentage" id="af2">
+          <af:convertNumber pattern="#{bindings.EmployeesPercentageInDepartments.hints.EmployeesPercentage.format}"
+                            groupingUsed="false" integerOnly="true"/>
+        </dvt:attributeFormat>
+      </dvt:pieGraph>
+    </af:showDetailItem>
+  </af:panelTabbed>
+</ui:composition>

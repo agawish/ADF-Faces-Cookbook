@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesPivotPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesCountInDepartment1" RangeSize="-1" DataControl="HrAppModuleDataControl"
+              id="EmployeesCountInDepartment1Iterator"/>
+  </executables>
+  <bindings>
+    <pivotTable IterBinding="EmployeesCountInDepartment1Iterator" id="EmployeesCountInDepartment1"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item value="NumberOfEmployees"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="RegionName"/>
+        </rows>
+        <pages/>
+        <aggregatedItems>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="RegionName" aggregateLabel="Total"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="CountryName" aggregateLabel="Total"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="City" aggregateLabel="Total"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="DepartmentName" aggregateLabel="Total"/>
+        </aggregatedItems>
+        <drills type="INSERT"/>
+        <hierarchies>
+          <item value="RegionName" location="BEFORE">
+            <child value="CountryName"/>
+          </item>
+          <item value="CountryName" location="BEFORE">
+            <child value="City"/>
+          </item>
+          <item value="City" location="BEFORE">
+            <child value="DepartmentName"/>
+          </item>
+        </hierarchies>
+      </pivotTableDataMap>
+    </pivotTable>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesCountInCities"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.adffaces.chapter6.model.views.EmployeesCountInCities_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[select  R.REGION_ID,R.REGION_NAME, R.REGION_CODE, COUNT(E.EMPLOYEE_ID) as NUMBER_OF_EMPLOYEES     
+From EMPLOYEES E, LOCATIONS L, DEPARTMENTS D, COUNTRIES C, REGIONS R     
+WHERE E.DEPARTMENT_ID = D.DEPARTMENT_ID and     
+D.LOCATION_ID= L.LOCATION_ID AND     
+L.COUNTRY_ID = C.COUNTRY_ID AND     
+C.REGION_ID=R.REGION_ID     
+group by  R.REGION_ID,R.REGION_NAME, R.REGION_CODE]]></SQLQuery>
+  <ViewAttribute
+    Name="RegionId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="REGION_ID"
+    Expression="REGION_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RegionName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="25"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REGION_NAME"
+    Expression="REGION_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RegionCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REGION_CODE"
+    Expression="REGION_CODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NumberOfEmployees"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="NUMBER_OF_EMPLOYEES"
+    Expression="NUMBER_OF_EMPLOYEES"
+    SQLType="NUMERIC"/>
+  <ViewLinkAccessor
+    Name="EmployeesCountInDepartments"
+    ViewLink="com.adffaces.chapter6.model.views.EmployeesCountInRegionAndDept"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.adffaces.chapter6.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <dvt:hierarchyViewer id="hv1" var="node" value="#{bindings.EmployeesView1.treeModel}"
+                       selectionListener="#{bindings.EmployeesView1.treeModel.makeCurrent}" detailWindow="none"
+                       layout="hier_vert_top" levelFetchSize="#{bindings.EmployeesView1.rangeSize}"
+                       styleClass="AFStretchWidth">
+    <dvt:link linkType="orthogonalRounded" id="l1"/>
+    <dvt:node type="com.adffaces.chapter6.model.views.EmployeesView" width="233" height="233" id="n1">
+      <f:facet name="zoom100">
+        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding" layout="vertical"
+                             id="pgl1">
+          <af:panelGroupLayout layout="horizontal" id="pgl2">
+            <af:panelGroupLayout layout="horizontal" id="pgl3" halign="center">
+              <af:image shortDesc="#{node.hints.Image.tooltip}" styleClass="AFHVNodeTitleTextStyle" id="ot1"
+                        source="/images/#{node.Image}"/>
+              <af:outputText value="#{node.FirstName}" shortDesc="#{node.hints.FirstName.tooltip}"
+                             styleClass="AFHVNodeSubtitleTextStyle" id="ot2"/>
+              <af:outputText value="#{node.LastName}" shortDesc="#{node.hints.LastName.tooltip}"
+                             styleClass="AFHVNodeTextStyle" id="ot3"/>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+          <af:spacer height="5" id="s1"/>
+          <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc1">
+            <af:showDetailItem text="Contact information" id="sdi1">
+              <af:spacer height="2" id="s2"/>
+              <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding" id="pfl1">
+                <af:panelLabelAndMessage label="#{node.hints.Email.label}" styleClass="AFHVPanelCardLabelStyle"
+                                         id="plam1">
+                  <af:outputText value="#{node.Email}" shortDesc="#{node.hints.Email.tooltip}"
+                                 styleClass="AFHVPanelCardTextStyle" id="ot4"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{node.hints.PhoneNumber.label}" styleClass="AFHVPanelCardLabelStyle"
+                                         id="plam2">
+                  <af:outputText value="#{node.PhoneNumber}" shortDesc="#{node.hints.PhoneNumber.tooltip}"
+                                 styleClass="AFHVPanelCardTextStyle" id="ot5"/>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+            </af:showDetailItem>
+            <af:showDetailItem text="Job information" id="sdi2">
+              <af:spacer height="2" id="s3"/>
+              <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding" id="pfl2">
+                <af:panelLabelAndMessage label="#{node.hints.Job.label}" styleClass="AFHVPanelCardLabelStyle"
+                                         id="plam3">
+                  <af:outputText value="#{node.Job}" shortDesc="#{node.hints.Job.tooltip}"
+                                 styleClass="AFHVPanelCardTextStyle" id="ot6"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{node.hints.HireDate.label}" styleClass="AFHVPanelCardLabelStyle"
+                                         id="plam4">
+                  <af:outputText value="#{node.HireDate}" shortDesc="#{node.hints.HireDate.tooltip}"
+                                 styleClass="AFHVPanelCardTextStyle" id="ot7">
+                    <af:convertDateTime pattern="#{node.hints.HireDate.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+            </af:showDetailItem>
+          </dvt:panelCard>
+        </af:panelGroupLayout>
+      </f:facet>
+    </dvt:node>
+  </dvt:hierarchyViewer>
+</ui:composition>

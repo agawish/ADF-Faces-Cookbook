@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+  <dvt:sunburst id="t1" value="#{bindings.EmployeesCountInRegions.treeModel}" var="row" animationOnDisplay="fan"
+                styleClass="AFStretchWidth" displayLevelsChildren="0" colorLabel="Number of Employees"
+                legendSource="ag1">
+    <af:switcher facetName="#{row.hierTypeBinding.name}" id="s1">
+      <f:facet name="EmployeesCountInRegions0">
+        <dvt:sunburstNode value="#{row.NumberOfEmployees}" label="#{row.RegionName}" id="sn1"
+                          shortDesc="#{row.RegionName}: #{row.NumberOfEmployees} Employees" drilling="insert">
+          <dvt:attributeGroups value="#{row.NumberOfEmployees}" type="color" id="ag1"
+                               minValue="0" maxValue="100" minLabel="Zero" maxLabel="1 Hundred"
+                               attributeType="continuous">
+          </dvt:attributeGroups>
+        </dvt:sunburstNode>
+      </f:facet>
+      <f:facet name="EmployeesCountInRegions1">
+        <dvt:sunburstNode value="#{row.EmployeesCount}" label="#{row.DepartmentName}" id="sn2"
+                          shortDesc="#{row.DepartmentName}: #{row.EmployeesCount} Employees">
+          <dvt:attributeGroups value="#{row.EmployeesCount}" type="color" id="ag2" minValue="0" maxValue="50"
+                               minLabel="zero" maxLabel="fifty" attributeType="continuous"/>
+        </dvt:sunburstNode>
+      </f:facet>
+    </af:switcher>
+  </dvt:sunburst>
+</ui:composition>
