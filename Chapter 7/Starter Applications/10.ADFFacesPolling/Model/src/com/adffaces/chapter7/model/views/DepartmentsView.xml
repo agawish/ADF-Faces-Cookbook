@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentsView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="Department.DEPARTMENT_ID, 
+       Department.DEPARTMENT_NAME, 
+       Department.MANAGER_ID, 
+       Department.LOCATION_ID"
+  FromList="DEPARTMENTS Department"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Department"
+    Entity="com.adffaces.chapter7.model.entity.Department"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="Department"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="Department"
+    AliasName="DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="Department"
+    AliasName="MANAGER_ID"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="Department"
+    AliasName="LOCATION_ID"/>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="com.adffaces.chapter7.model.views.links.EmployeesDepartmentsFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

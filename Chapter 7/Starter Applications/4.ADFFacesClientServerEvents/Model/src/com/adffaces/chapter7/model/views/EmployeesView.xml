@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="Employee.EMPLOYEE_ID, 
+       Employee.FIRST_NAME, 
+       Employee.LAST_NAME, 
+       Employee.EMAIL, 
+       Employee.PHONE_NUMBER, 
+       Employee.HIRE_DATE, 
+       Employee.JOB, 
+       Employee.SALARY, 
+       Employee.COMMISSION_PCT, 
+       Employee.MANAGER_ID, 
+       Employee.DEPARTMENT_ID, 
+       Employee.IMAGE, 
+       Employee.COLOR, 
+       Employee.BIOGRAPHY, 
+       Employee.CODE_SAMPLE"
+  FromList="EMPLOYEES Employee"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="RegionsView1"
+    ViewObjectName="com.adffaces.chapter7.model.views.RegionsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CountriesBasedOnRegions1"
+    ViewObjectName="com.adffaces.chapter7.model.views.ro.CountriesBasedOnRegions"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="p_regionId">
+        <TransientExpression><![CDATA[RegionId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="LocationsBasedOnCountries1"
+    ViewObjectName="com.adffaces.chapter7.model.views.ro.LocationsBasedOnCountries"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="p_countryId">
+        <TransientExpression><![CDATA[CountryId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="DepartmentsBasedOnLocations1"
+    ViewObjectName="com.adffaces.chapter7.model.views.ro.DepartmentsBasedOnLocations"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="p_locationId">
+        <TransientExpression><![CDATA[LocationId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_RegionId"
+    ListVOName="RegionsView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RegionId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RegionId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RegionName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CountryId"
+    ListVOName="CountriesBasedOnRegions1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CountryName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LocationId"
+    ListVOName="LocationsBasedOnCountries1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentsBasedOnLocations1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Employee"
+    Entity="com.adffaces.chapter7.model.entity.Employee"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="Employee"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="Employee"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="Employee"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="Employee"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="PhoneNumber"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNumber"
+    EntityUsage="Employee"
+    AliasName="PHONE_NUMBER"/>
+  <ViewAttribute
+    Name="HireDate"
+    PrecisionRule="true"
+    EntityAttrName="HireDate"
+    EntityUsage="Employee"
+    AliasName="HIRE_DATE"/>
+  <ViewAttribute
+    Name="Job"
+    PrecisionRule="true"
+    EntityAttrName="Job"
+    EntityUsage="Employee"
+    AliasName="JOB"/>
+  <ViewAttribute
+    Name="Salary"
+    PrecisionRule="true"
+    EntityAttrName="Salary"
+    EntityUsage="Employee"
+    AliasName="SALARY"/>
+  <ViewAttribute
+    Name="CommissionPct"
+    PrecisionRule="true"
+    EntityAttrName="CommissionPct"
+    EntityUsage="Employee"
+    AliasName="COMMISSION_PCT"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="Employee"
+    AliasName="MANAGER_ID"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="Employee"
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="Employee"
+    AliasName="IMAGE"/>
+  <ViewAttribute
+    Name="Color"
+    PrecisionRule="true"
+    EntityAttrName="Color"
+    EntityUsage="Employee"
+    AliasName="COLOR"/>
+  <ViewAttribute
+    Name="Biography"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Biography"
+    EntityUsage="Employee"
+    AliasName="BIOGRAPHY"/>
+  <ViewAttribute
+    Name="CodeSample"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="CodeSample"
+    EntityUsage="Employee"
+    AliasName="CODE_SAMPLE"/>
+  <ViewAttribute
+    Name="RegionId"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Long"
+    ColumnType="LONGINT"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    LOVName="LOV_RegionId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="com.adffaces.chapter7.model.views.EmployeesView.RegionId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CountryId"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Long"
+    ColumnType="LONGINT"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    LOVName="LOV_CountryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="com.adffaces.chapter7.model.views.EmployeesView.CountryId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LocationId"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Long"
+    ColumnType="LONGINT"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    LOVName="LOV_LocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="com.adffaces.chapter7.model.views.EmployeesView.LocationId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="com.adffaces.chapter7.model.views.links.EmployeesEmployeesFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DepartmentsView"
+    ViewLink="com.adffaces.chapter7.model.views.links.DepartmentsEmployeesFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TasksView"
+    ViewLink="com.adffaces.chapter7.model.views.links.TasksEmployeesFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.adffaces.chapter7.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

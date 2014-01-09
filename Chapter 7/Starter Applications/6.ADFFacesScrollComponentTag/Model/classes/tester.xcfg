@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.adffaces.chapter7.model.Chapter7">
+      <AppModuleConfig name="142E9A489E8" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/FacesHrDS" ApplicationName="com.adffaces.chapter7.model.Chapter7" jbo.project="com.adffaces.chapter7.model.Model" BC4JConfigName="Chapter7Local" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DeployPlatform="LOCAL" JDBCName="FacesHr">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="com.adffaces.chapter7.model.Chapter7"/>
+         <Tester FullProxyInterfaceName="com.adffaces.chapter7.model.common.Chapter7"/>
+         <Custom ns0:LastUsedConfiguration="Chapter7Local" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/FacesHrDS" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

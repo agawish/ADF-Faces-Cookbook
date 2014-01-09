@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="pollEmployeesPageDef"
+                Package="com.adffaces.chapter7.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="Chapter7DataControl" id="EmployeesView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
+      <nodeDefinition DefName="com.adffaces.chapter7.model.views.EmployeesView" Name="EmployeesView10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmployeesView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

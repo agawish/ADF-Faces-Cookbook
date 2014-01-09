@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="eventsPageDef"
+                Package="com.adffaces.chapter7.view.pageDefs">
+    <parameters/>
+    <executables>
+        <variableIterator id="variables"/>
+        <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+        <iterator Binds="EmployeesView1" RangeSize="25" DataControl="Chapter7DataControl" id="EmployeesView1Iterator"
+                  ChangeEventPolicy="ppr"/>
+    </executables>
+    <bindings>
+        <attributeValues IterBinding="EmployeesView1Iterator" id="FirstName">
+            <AttrNames>
+                <Item Value="FirstName"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="EmployeesView1Iterator" id="LastName">
+            <AttrNames>
+                <Item Value="LastName"/>
+            </AttrNames>
+        </attributeValues>
+        <action IterBinding="EmployeesView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+        <action IterBinding="EmployeesView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+        <action IterBinding="EmployeesView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+        <action IterBinding="EmployeesView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+        <attributeValues IterBinding="EmployeesView1Iterator" id="Email">
+            <AttrNames>
+                <Item Value="Email"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="EmployeesView1Iterator" id="PhoneNumber">
+            <AttrNames>
+                <Item Value="PhoneNumber"/>
+            </AttrNames>
+        </attributeValues>
+    </bindings>
+</pageDefinition>

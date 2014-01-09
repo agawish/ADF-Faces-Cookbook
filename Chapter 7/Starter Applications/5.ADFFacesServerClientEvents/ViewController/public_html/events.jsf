@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="events.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/templates/defaultHrTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="Left"/>
+                <f:facet name="Center">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
+                                      required="#{bindings.FirstName.hints.mandatory}"
+                                      columns="#{bindings.FirstName.hints.displayWidth}"
+                                      maximumLength="#{bindings.FirstName.hints.precision}"
+                                      shortDesc="#{bindings.FirstName.hints.tooltip}" id="it1"
+                                      valueChangeListener="#{eventsBean.changeFirstName}">
+                            <f:validator binding="#{bindings.FirstName.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.LastName.inputValue}" label="#{bindings.LastName.hints.label}"
+                                      required="#{bindings.LastName.hints.mandatory}"
+                                      columns="#{bindings.LastName.hints.displayWidth}"
+                                      maximumLength="#{bindings.LastName.hints.precision}"
+                                      shortDesc="#{bindings.LastName.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.LastName.validator}"/>
+                            <af:clientAttribute name="label" value="#{bindings.LastName.hints.label}"/>
+                            <af:clientListener type="valueChange" method="changeLastName"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                      required="#{bindings.Email.hints.mandatory}"
+                                      columns="#{bindings.Email.hints.displayWidth}"
+                                      maximumLength="#{bindings.Email.hints.precision}"
+                                      shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
+                            <f:validator binding="#{bindings.Email.validator}"/>
+                            <af:clientListener type="valueChange" method="changeClientEmail"/>
+                            <af:serverListener type="changeServerEmail" method="#{eventsBean.changeServerEmail}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout layout="vertical" id="pgl1">
+                                <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                </af:panelGroupLayout>
+                                <af:button text="Submit" id="b5" actionListener="#{eventsBean.submitChanges}"
+                                           partialTriggers="b5"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </f:facet>
+                <f:facet name="Right"/>
+            </af:pageTemplate>
+        </af:form>
+        <af:resource type="javascript">
+            function changeLastName(valueChangeEvent){
+               var label = valueChangeEvent.getSource().getProperty("label");
+               alert(label+ " Changed from: " + valueChangeEvent.getOldValue() + " to: " +
+                           valueChangeEvent.getNewValue());
+            }
+            
+            function changeClientEmail(valueChangeEvent){
+                var component = valueChangeEvent.getSource(); 
+                console.log("Email Changed from: " + valueChangeEvent.getOldValue() + " to: " + valueChangeEvent.getNewValue());
+                AdfCustomEvent.queue(component, "changeServerEmail", {newValue:valueChangeEvent.getNewValue(), oldValue: valueChangeEvent.getOldValue()}, true); 
+                valueChangeEvent.cancel(); 
+            }
+        </af:resource>
+    </af:document>
+</f:view>

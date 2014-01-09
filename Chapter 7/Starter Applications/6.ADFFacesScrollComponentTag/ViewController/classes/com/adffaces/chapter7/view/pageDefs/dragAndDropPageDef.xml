@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="dragAndDropPageDef"
+                Package="com.adffaces.chapter7.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

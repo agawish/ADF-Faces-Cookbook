@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config" xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties"
+            xmlns:sec="http://xmlns.oracle.com/adf/security/config"
+            xmlns:ads="http://xmlns.oracle.com/adf/activedata/config">
+    <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+        <defaults changeEventPolicy="ppr" useBindVarsForViewCriteriaLiterals="true" useBindValuesInFindByKey="true"
+                  mapNegativeScaleToIntegerTypes="true" executeEmptyOnException="true"/>
+        <startup>
+            <amconfig-overrides>
+                <config:Database jbo.locking.mode="optimistic"/>
+            </amconfig-overrides>
+        </startup>
+    </adf-adfm-config>
+    <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+        <adf-property name="adfAppUID" value="Chapter6StarterApp.com.adffaces.chapter7"/>
+    </adf:adf-properties-child>
+    <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+        <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                                credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+    </sec:adf-security-child>
+    <!--  
+    <ads:adf-activedata-config xmlns="http://xmlns.oracle.com/adf/activedata/config">
+        
+         transport allows three settings:  
+         * streaming (default)  
+         * polling  
+         * long-polling  
+        
+        <transport>long-polling</transport>
+        <latency-threshold>5000</latency-threshold>
+        <keep-alive-interval>10000</keep-alive-interval>
+        <polling-interval>3000</polling-interval>
+        <max-reconnect-attempt-time>1800000</max-reconnect-attempt-time>
+        <reconnect-wait-time>10000</reconnect-wait-time>
+    </ads:adf-activedata-config>
+    -->
+</adf-config>

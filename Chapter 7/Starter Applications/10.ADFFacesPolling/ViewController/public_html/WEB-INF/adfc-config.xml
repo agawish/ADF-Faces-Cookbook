@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="partialTriggers">
+    <page>/partialTriggers.jsf</page>
+  </view>
+  <view id="events">
+    <page>/events.jsf</page>
+  </view>
+  <view id="dragAndDrop">
+    <page>/dragAndDrop.jsf</page>
+  </view>
+  <control-flow-rule id="__2">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>events</from-outcome>
+      <to-activity-id>events</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>partialTriggers</from-outcome>
+      <to-activity-id>partialTriggers</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>eventsBean</managed-bean-name>
+    <managed-bean-class>com.adffaces.chapter7.view.beans.EventsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>dragAndDropBean</managed-bean-name>
+    <managed-bean-class>com.adffaces.chapter7.view.beans.DragAndDropBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

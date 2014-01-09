@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="partialTriggers.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/templates/defaultHrTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+        <f:facet name="Left"/>
+        <f:facet name="Center">
+          <af:panelFormLayout id="pfl1">
+            <af:selectOneChoice value="#{bindings.RegionsView1.inputValue}" label="#{bindings.RegionsView1.label}"
+                                required="#{bindings.RegionsView1.hints.mandatory}"
+                                shortDesc="#{bindings.RegionsView1.hints.tooltip}" id="soc1" autoSubmit="true">
+              <f:selectItems value="#{bindings.RegionsView1.items}" id="si1"/>
+              <f:validator binding="#{bindings.RegionsView1.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.CountriesView2.inputValue}" label="#{bindings.CountriesView2.label}"
+                                required="#{bindings.CountriesView2.hints.mandatory}"
+                                shortDesc="#{bindings.CountriesView2.hints.tooltip}" id="soc2" partialTriggers="soc1">
+              <f:selectItems value="#{bindings.CountriesView2.items}" id="si2"/>
+              <f:validator binding="#{bindings.CountriesView2.validator}"/>
+            </af:selectOneChoice>
+            <af:button text="Go to Events Page" id="b1" action="events"/>
+          </af:panelFormLayout>
+        </f:facet>
+        <f:facet name="Right"/>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>

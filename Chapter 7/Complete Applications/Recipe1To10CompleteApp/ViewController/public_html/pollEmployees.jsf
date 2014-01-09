@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="pollEmployees.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/templates/defaultHrTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="Left"/>
+                <f:facet name="Center">
+                    <af:panelGroupLayout id="pgl1">
+                        <af:poll id="p1" interval="5000">
+                            <af:clientListener type="poll" method="refreshTable"/>
+                        </af:poll>
+                        <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                                   disabled="#{!bindings.Execute.enabled}" id="b1" clientComponent="true"/>
+                        <af:table value="#{bindings.EmployeesView1.collectionModel}" var="row"
+                                  rows="#{bindings.EmployeesView1.rangeSize}"
+                                  emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0" fetchSize="#{bindings.EmployeesView1.rangeSize}" id="t1"
+                                  partialTriggers="::p1 ::b1">
+                            <af:column headerText="#{bindings.EmployeesView1.hints.EmployeeId.label}" id="c1">
+                                <af:outputText value="#{row.EmployeeId}"
+                                               shortDesc="#{bindings.EmployeesView1.hints.EmployeeId.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmployeesView1.hints.EmployeeId.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.EmployeesView1.hints.FirstName.label}" id="c2">
+                                <af:outputText value="#{row.FirstName}"
+                                               shortDesc="#{bindings.EmployeesView1.hints.FirstName.tooltip}" id="ot2"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.EmployeesView1.hints.LastName.label}" id="c3">
+                                <af:outputText value="#{row.LastName}"
+                                               shortDesc="#{bindings.EmployeesView1.hints.LastName.tooltip}" id="ot3"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.EmployeesView1.hints.Email.label}" id="c4">
+                                <af:outputText value="#{row.Email}"
+                                               shortDesc="#{bindings.EmployeesView1.hints.Email.tooltip}" id="ot4"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.EmployeesView1.hints.PhoneNumber.label}" id="c5">
+                                <af:outputText value="#{row.PhoneNumber}"
+                                               shortDesc="#{bindings.EmployeesView1.hints.PhoneNumber.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                        </af:table>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="Right"/>
+            </af:pageTemplate>
+        </af:form>
+        <af:resource type="javascript">
+            function refreshTable(pollEvent){
+                var button=pollEvent.getSource().findComponent('b1');
+                var actionEvent = new AdfActionEvent(button);
+                actionEvent.queue(true);
+            }
+        </af:resource>
+    </af:document>
+</f:view>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="partialTriggers">
+    <page>/partialTriggers.jsf</page>
+  </view>
+  <view id="events">
+    <page>/events.jsf</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name>eventsBean</managed-bean-name>
+    <managed-bean-class>com.adffaces.chapter7.view.beans.EventsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

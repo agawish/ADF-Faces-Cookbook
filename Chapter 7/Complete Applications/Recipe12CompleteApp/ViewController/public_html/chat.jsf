@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="chat.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:panelSplitter id="ps1" positionedFromEnd="true" splitterPosition="20" orientation="vertical"
+                                      dimensionsFrom="parent">
+                        <f:facet name="first">
+                            <af:table var="row" value="#{chatBean.chatMessages}" rowBandingInterval="0" id="t1" clientComponent="true"
+                                      columnStretching="last" contentDelivery="immediate">
+                                <af:column sortable="false" headerText="" id="c1">
+                                    <af:outputText value="#{row}" id="ot1"/>
+                                </af:column>
+                                <af:serverListener type="refreshTable" method="#{chatBean.refreshTable}"/>
+                            </af:table>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelGroupLayout id="pgl1" layout="horizontal">
+                                <af:inputText label="Label 1" id="it1" simple="true" placeholder="Add Chat Message"
+                                              valueChangeListener="#{chatBean.newChatMessage}" columns="100"/>
+                                <af:spacer width="10" height="10" id="s1"/>
+                                <af:button text="Send Message" id="b1" />
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+        <af:resource type="javascript">
+            var wsURL = "ws://127.0.0.1:7101/wschat/chat";
+            
+            var websocket = new WebSocket(wsURL);
+            
+            websocket.onmessage = function(evt){
+                console.log("Recieved "+evt.data);
+                handleMessage(evt.data);
+                evt.preventDefault();
+            }
+            
+            function handleMessage(message){
+                var table = AdfPage.PAGE.findComponentByAbsoluteId("pt1:t1");
+                AdfCustomEvent.queue(table, "refreshTable", {clientId: 'pt1:t1'}, true); 
+            }
+        </af:resource>
+    </af:document>
+</f:view>

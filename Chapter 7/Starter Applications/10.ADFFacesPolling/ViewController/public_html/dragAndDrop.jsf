@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="dragAndDrop.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/templates/defaultHrTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="Left"/>
+                <f:facet name="Center">
+                    <af:panelGroupLayout id="pfl1" layout="vertical">
+                        <af:outputText value="Drag Me" id="ot1">
+                            <af:clientAttribute name="name" value="John Smith"/>
+                            <af:attributeDragSource attribute="name"/>
+                        </af:outputText>
+                        <af:inputText label="Drop inside me" id="it1">
+                            <af:attributeDropTarget attribute="value"/>
+                        </af:inputText>
+                        <af:separator id="s1"/>
+                        <af:outputText value="Drag Me" id="ot2">
+                            <af:clientAttribute name="drinks" value="#{dragAndDropBean.drinks}"/>
+                            <af:attributeDragSource attribute="drinks"/>
+                        </af:outputText>
+                        <af:panelBox text="Drop in here" id="it3">
+                            <af:dropTarget dropListener="#{dragAndDropBean.handleDrop}">
+                                <af:dataFlavor flavorClass="java.lang.Object[]"/>
+                            </af:dropTarget>
+                        </af:panelBox>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="Right"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

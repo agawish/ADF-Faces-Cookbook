@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.1.2.66.68" id="DataControls"
+                    Package="com.adffaces.chapter7.view">
+</DataControlConfigs>

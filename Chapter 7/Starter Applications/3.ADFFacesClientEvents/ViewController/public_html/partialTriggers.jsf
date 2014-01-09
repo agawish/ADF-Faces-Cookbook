@@ -20,7 +20,6 @@
               <f:selectItems value="#{bindings.CountriesView2.items}" id="si2"/>
               <f:validator binding="#{bindings.CountriesView2.validator}"/>
             </af:selectOneChoice>
-            <af:button text="Go to Events Page" id="b1" action="events"/>
           </af:panelFormLayout>
         </f:facet>
         <f:facet name="Right"/>

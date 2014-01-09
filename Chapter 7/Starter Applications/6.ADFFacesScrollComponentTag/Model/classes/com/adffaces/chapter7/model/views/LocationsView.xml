@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LocationsView"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  SelectList="Location.LOCATION_ID, 
+       Location.STREET_ADDRESS, 
+       Location.POSTAL_CODE, 
+       Location.CITY, 
+       Location.STATE_PROVINCE, 
+       Location.COUNTRY_ID"
+  FromList="LOCATIONS Location"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Location"
+    Entity="com.adffaces.chapter7.model.entity.Location"/>
+  <ViewAttribute
+    Name="LocationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="Location"
+    AliasName="LOCATION_ID"/>
+  <ViewAttribute
+    Name="StreetAddress"
+    PrecisionRule="true"
+    EntityAttrName="StreetAddress"
+    EntityUsage="Location"
+    AliasName="STREET_ADDRESS"/>
+  <ViewAttribute
+    Name="PostalCode"
+    PrecisionRule="true"
+    EntityAttrName="PostalCode"
+    EntityUsage="Location"
+    AliasName="POSTAL_CODE"/>
+  <ViewAttribute
+    Name="City"
+    PrecisionRule="true"
+    EntityAttrName="City"
+    EntityUsage="Location"
+    AliasName="CITY"/>
+  <ViewAttribute
+    Name="StateProvince"
+    PrecisionRule="true"
+    EntityAttrName="StateProvince"
+    EntityUsage="Location"
+    AliasName="STATE_PROVINCE"/>
+  <ViewAttribute
+    Name="CountryId"
+    PrecisionRule="true"
+    EntityAttrName="CountryId"
+    EntityUsage="Location"
+    AliasName="COUNTRY_ID"/>
+  <ViewLinkAccessor
+    Name="DepartmentsView"
+    ViewLink="com.adffaces.chapter7.model.views.links.DepartmentsLocationsFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

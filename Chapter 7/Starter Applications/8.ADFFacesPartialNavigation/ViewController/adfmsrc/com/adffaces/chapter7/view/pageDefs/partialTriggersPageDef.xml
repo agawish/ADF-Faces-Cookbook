@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="partialTriggersPageDef"
+                Package="com.adffaces.chapter7.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="RegionsView1" RangeSize="25" DataControl="Chapter7DataControl" id="RegionsView1Iterator"/>
+    <iterator Binds="CountriesView2" RangeSize="25" DataControl="Chapter7DataControl" id="CountriesView2Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="RegionsView1Iterator" ListOperMode="navigation" ListIter="RegionsView1Iterator"
+          id="RegionsView1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="RegionName"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="CountriesView2Iterator" ListOperMode="navigation" ListIter="CountriesView2Iterator"
+          id="CountriesView2" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="CountryName"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>
