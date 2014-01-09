@@ -11,25 +11,13 @@
   <pageMap>
     <page path="/templates/defaultHrTemplate.jsf" usageId="com_adffaces_chapter6_view_defaultHrTemplatePageDef"/>
     <page path="/partialTriggers.jsf" usageId="com_adffaces_chapter6_view_partialTriggersPageDef"/>
-    <page path="/serverEvents.jsf" usageId="com_adffaces_chapter7_view_serverEventsPageDef"/>
     <page path="/events.jsf" usageId="com_adffaces_chapter7_view_eventsPageDef"/>
-    <page path="/pollEmployees.jsf" usageId="com_adffaces_chapter7_view_pollEmployeesPageDef"/>
-    <page path="/activedData.jsf" usageId="com_adffaces_chapter7_view_activedDataPageDef"/>
-    <page path="/dragAndDrop.jsf" usageId="com_adffaces_chapter7_view_dragAndDropPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_adffaces_chapter6_view_defaultHrTemplatePageDef" path="templates.defaultHrTemplatePageDef"/>
     <page id="com_adffaces_chapter6_view_partialTriggersPageDef"
           path="com.adffaces.chapter7.view.pageDefs.partialTriggersPageDef"/>
-    <page id="com_adffaces_chapter7_view_serverEventsPageDef"
-          path="com.adffaces.chapter7.view.pageDefs.serverEventsPageDef"/>
     <page id="com_adffaces_chapter7_view_eventsPageDef" path="com.adffaces.chapter7.view.pageDefs.eventsPageDef"/>
-    <page id="com_adffaces_chapter7_view_pollEmployeesPageDef"
-          path="com.adffaces.chapter7.view.pageDefs.pollEmployeesPageDef"/>
-    <page id="com_adffaces_chapter7_view_activedDataPageDef"
-          path="com.adffaces.chapter7.view.pageDefs.activedDataPageDef"/>
-    <page id="com_adffaces_chapter7_view_dragAndDropPageDef"
-          path="com.adffaces.chapter7.view.pageDefs.dragAndDropPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="Chapter7DataControl" Package="com.adffaces.chapter7.model"
