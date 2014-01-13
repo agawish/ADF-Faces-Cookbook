@@ -7,4 +7,4 @@ Code materials for ADF Faces Cookbook
 
 - Chapter 7 content are added and ready to use.
 
-- Chapter 8 content will be available at 11 Jan 2014.
+- Chapter 8 content are added and ready to use.
