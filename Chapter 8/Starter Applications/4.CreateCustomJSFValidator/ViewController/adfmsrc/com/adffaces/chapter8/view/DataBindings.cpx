@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.chapter8.view" ClientType="Generic">
+  <pageMap>
+    <page path="/templates/defaultHrTemplate.jsf" usageId="com_adffaces_chapter8_view_defaultHrTemplatePageDef"/>
+    <page path="/employees.jsf" usageId="com_adffaces_chapter8_view_addingConversionPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_chapter8_view_defaultHrTemplatePageDef" path="templates.defaultHrTemplatePageDef"/>
+    <page id="com_adffaces_chapter8_view_addingConversionPageDef"
+          path="com.adffaces.chapter8.view.pageDefs.addingConversionPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="Chapter8DataControl" Package="com.adffaces.chapter8.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="Chapter8Local" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
