@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.chapter9.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/templates/defaultHrTemplate.jsf" usageId="com_adffaces_chapter9_view_defaultHrTemplatePageDef"/>
+    <page path="/WEB-INF/templates/hr-crud-template.xml#hr-crud-template@Commit"
+          usageId="com_adffaces_chapter9_view_hr_crud_template_hr_crud_template_CommitPageDef"/>
+    <page path="/WEB-INF/templates/hr-crud-template.xml#hr-crud-template@Rollback"
+          usageId="com_adffaces_chapter9_view_hr_crud_template_hr_crud_template_RollbackPageDef"/>
+    <page path="/fragments/viewAllEmployees.jsff" usageId="com_adffaces_chapter9_view_viewAllEmployeesPageDef"/>
+    <page path="/fragments/createEmployee.jsff" usageId="com_adffaces_chapter9_view_createEmployeePageDef"/>
+    <page path="/WEB-INF/employees-crud-flow.xml#employees-crud-flow@createNew"
+          usageId="com_adffaces_chapter9_view_employees_crud_flow_employees_crud_flow_createNewPageDef"/>
+    <page path="/employeesCrud.jsf" usageId="com_adffaces_chapter9_view_employeesCrudPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_chapter9_view_defaultHrTemplatePageDef" path="templates.defaultHrTemplatePageDef"/>
+    <page id="com_adffaces_chapter9_view_hr_crud_template_hr_crud_template_CommitPageDef"
+          path="templates.hr_crud_template_hr_crud_template_CommitPageDef"/>
+    <page id="com_adffaces_chapter9_view_hr_crud_template_hr_crud_template_RollbackPageDef"
+          path="templates.hr_crud_template_hr_crud_template_RollbackPageDef"/>
+    <page id="com_adffaces_chapter9_view_viewAllEmployeesPageDef" path="fragments.viewAllEmployeesPageDef"/>
+    <page id="com_adffaces_chapter9_view_createEmployeePageDef" path="fragments.createEmployeePageDef"/>
+    <page id="com_adffaces_chapter9_view_employees_crud_flow_employees_crud_flow_createNewPageDef"
+          path="com.adffaces.chapter9.view.pageDefs.employees_crud_flow_employees_crud_flow_createNewPageDef"/>
+    <page id="com_adffaces_chapter9_view_employeesCrudPageDef"
+          path="com.adffaces.chapter9.view.pageDefs.employeesCrudPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="Chapter9AMDataControl" Package="com.adffaces.chapter9.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="Chapter9AMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

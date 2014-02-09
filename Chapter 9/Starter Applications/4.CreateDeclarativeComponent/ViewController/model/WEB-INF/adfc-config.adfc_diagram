@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">employeesCrud</property>
+      <property
+         name="page">/employeesCrud.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesCrud&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">117.5459</property>
+      <property
+         name="x">276.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">employeesCrudWithSalary</property>
+      <property
+         name="page">/employeesCrudWithSalary.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesCrudWithSalary&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">115.5459</property>
+      <property
+         name="x">134.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">employeesWithDept</property>
+      <property
+         name="page">/employeesWithDept.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesWithDept&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">212.24707</property>
+      <property
+         name="x">182.0</property>
+   </View>
+</SDM>

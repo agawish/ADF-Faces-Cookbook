@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:componentDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" componentVar="comp" definition="private"
+                 xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+        <af:link text="#{attrs.text}" id="dc_l1" action="#{comp.handleAction}"
+             actionListener="#{comp.handleActionListener}" inlineStyle="#{attrs.inlineStyle}"
+             disabled="#{attrs.disabled}" styleClass="btn red-button">
+          <af:facetRef facetName="buttonBody" />   
+</af:link>
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>redButton</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>buttonBody</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>text</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>inlineStyle</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>disabled</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+            </afc:attribute>
+            <afc:component-extension>
+                <afc:component-tag-namespace>com.adffaces.chapter9.components</afc:component-tag-namespace>
+                <afc:component-taglib-uri>http://components.chapter9.adffaces.com</afc:component-taglib-uri>
+                <afc:method-attribute>
+                    <afc:attribute-name>action</afc:attribute-name>
+                    <afc:method-signature>java.lang.String method()</afc:method-signature>
+                </afc:method-attribute>
+                <afc:method-attribute>
+                    <afc:attribute-name>actionListener</afc:attribute-name>
+                    <afc:method-signature>void method(javax.faces.event.ActionEvent)</afc:method-signature>
+                </afc:method-attribute>
+            </afc:component-extension>
+        </afc:component>
+    </af:xmlContent>
+</af:componentDef>

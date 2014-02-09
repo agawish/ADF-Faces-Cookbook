@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelCollection id="pc1">
+    <af:table value="#{bindings.Employees1.collectionModel}" var="row" rows="#{bindings.Employees1.rangeSize}"
+              emptyText="#{bindings.Employees1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.Employees1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.Employees1.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.Employees1.rangeSize}" id="t1" columnStretching="column:c2">
+      <af:column headerText="#{bindings.Employees1.hints.EmployeeId.label}" id="c1">
+        <af:outputText value="#{row.EmployeeId}" shortDesc="#{bindings.Employees1.hints.EmployeeId.tooltip}" id="ot1">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.Employees1.hints.EmployeeId.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column headerText="#{bindings.Employees1.hints.FirstName.label}" id="c2">
+        <af:outputText value="#{row.FirstName}" shortDesc="#{bindings.Employees1.hints.FirstName.tooltip}" id="ot2"/>
+      </af:column>
+      <af:column headerText="#{bindings.Employees1.hints.LastName.label}" id="c3">
+        <af:outputText value="#{row.LastName}" shortDesc="#{bindings.Employees1.hints.LastName.tooltip}" id="ot3"/>
+      </af:column>
+      <af:column headerText="#{bindings.Employees1.hints.Email.label}" id="c4">
+        <af:outputText value="#{row.Email}" shortDesc="#{bindings.Employees1.hints.Email.tooltip}" id="ot4"/>
+      </af:column>
+      <af:column headerText="#{bindings.Employees1.hints.PhoneNumber.label}" id="c5">
+        <af:outputText value="#{row.PhoneNumber}" shortDesc="#{bindings.Employees1.hints.PhoneNumber.tooltip}"
+                       id="ot5"/>
+      </af:column>
+    </af:table>
+    <f:facet name="toolbar">
+      <af:toolbar id="t2">
+        <af:button text="Add new Employee" id="b1" action="create"/>
+      </af:toolbar>
+    </f:facet>
+  </af:panelCollection>
+</ui:composition>

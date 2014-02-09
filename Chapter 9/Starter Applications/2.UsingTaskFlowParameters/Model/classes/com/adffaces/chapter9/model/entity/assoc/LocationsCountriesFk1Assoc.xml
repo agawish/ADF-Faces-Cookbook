@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LocationsCountriesFk1Assoc"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Countries"
+    Cardinality="1"
+    Source="true"
+    Owner="com.adffaces.chapter9.model.entity.CountriesEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Countries"/>
+      <Attr Name="_foreignKey" Value="com.adffaces.chapter9.model.entity.CountriesEO.CountryCIdPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter9.model.entity.CountriesEO.CountryId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Locations"
+    Cardinality="-1"
+    Owner="com.adffaces.chapter9.model.entity.LocationsEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Locations"/>
+      <Attr Name="_foreignKey" Value="com.adffaces.chapter9.model.entity.LocationsEO.LocationsCountriesFk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter9.model.entity.LocationsEO.CountryId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="showDepartmentInfoPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Departments1" RangeSize="25" DataControl="Chapter9AMDataControl" id="Departments1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="Employees3" RangeSize="25" DataControl="Chapter9AMDataControl" id="Employees3Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Departments1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="Departments1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="Departments1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="Departments1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="Departments1Iterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Departments1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Departments1Iterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Departments1Iterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="Employees3Iterator" id="Employees3">
+      <nodeDefinition DefName="com.adffaces.chapter9.model.views.EmployeesVO" Name="Employees30">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="Job"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="Image"/>
+          <Item Value="Color"/>
+          <Item Value="Biography"/>
+          <Item Value="CodeSample"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Departments1Iterator" id="setCurrentRowWithKeyValue"
+            InstanceName="Chapter9AMDataControl.Departments1" DataControl="Chapter9AMDataControl"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

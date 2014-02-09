@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="viewAllEmployeesPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Employees1" RangeSize="25" DataControl="Chapter9AMDataControl" id="Employees1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Employees1Iterator" id="Employees1">
+      <nodeDefinition DefName="com.adffaces.chapter9.model.views.EmployeesVO" Name="Employees10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="show-department-info">
+    <default-activity>showDepartmentInfo</default-activity>
+    <view id="showDepartmentInfo">
+      <page>/fragments/showDepartmentInfo.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<declarativeCompDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/declarativecomp">
+  <declarativecomp-jsp-ui-def>/components/redButton.jsf</declarativecomp-jsp-ui-def>
+  <declarativecomp-jsp-ui-def>/components/blueButton.jsf</declarativecomp-jsp-ui-def>
+  <declarativecomp-taglib>
+    <taglib-name>FlatUI</taglib-name>
+    <taglib-uri>http://components.chapter9.adffaces.com</taglib-uri>
+    <taglib-prefix>flatui</taglib-prefix>
+  </declarativecomp-taglib>
+</declarativeCompDefs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesWithDeptPageDef"
+                Package="com.adffaces.chapter9.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <taskFlow id="employeescrudflow1" taskFlowId="/WEB-INF/employees-crud-flow.xml#employees-crud-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="showSalary" value="false"/>
+      </parameters>
+    </taskFlow>
+    <taskFlow id="showdepartmentinfo1" taskFlowId="/WEB-INF/show-department-info.xml#show-department-info"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+  <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+    <event name="selectDepartment">
+      <producer region="employeescrudflow1.viewAllEmployeesPageDef.Employees10">
+        <consumer region="showdepartmentinfo1" handler="showDepartmentInfoPageDef.setCurrentRowWithKeyValue">
+          <parameters>
+            <parameter name="rowKey" value="#{payLoad}"/>
+          </parameters>
+        </consumer>
+      </producer>
+    </event>
+  </eventMap>
+</pageDefinition>

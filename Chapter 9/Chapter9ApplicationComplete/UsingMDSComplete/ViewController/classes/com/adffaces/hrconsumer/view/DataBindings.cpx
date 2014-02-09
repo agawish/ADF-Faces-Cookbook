@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.hrconsumer.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/employees.jsf" usageId="com_adffaces_hrconsumer_view_employeesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_hrconsumer_view_employeesPageDef"
+          path="com.adffaces.hrconsumer.view.pageDefs.employeesPageDef"/>
+  </pageDefinitionUsages>
+</Application>

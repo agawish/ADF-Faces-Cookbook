@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.chapter9.view" ClientType="Generic">
+  <pageMap>
+    <page path="/templates/defaultHrTemplate.jsf" usageId="com_adffaces_chapter9_view_defaultHrTemplatePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_chapter9_view_defaultHrTemplatePageDef" path="templates.defaultHrTemplatePageDef"/>
+  </pageDefinitionUsages>
+</Application>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesPageDef"
+                Package="com.adffaces.hrconsumer.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <taskFlow id="employeescrudflow1" taskFlowId="/WEB-INF/employees-crud-flow.xml#employees-crud-flow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="showSalary" value="true"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>
