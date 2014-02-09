@@ -5,6 +5,4 @@ This is the github repository for ADF Faces Cookbook, and it'll contain all the 
 
 Code materials for ADF Faces Cookbook
 
-- Chapter 7 content are added and ready to use.
-
-- Chapter 8 content are added and ready to use.
+- Chapter 9 content are added and ready to use.
