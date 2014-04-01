@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-        xmlns:c="http://java.sun.com/jsp/jstl/core">
+        xmlns:c="http://java.sun.com/jsp/jstl/core" locale="fr">
     <c:set var="viewcontrollerBundle" value="#{adfBundle['org.amr.helloadf.view.ViewControllerBundle']}"/>
     <af:document title="#{viewcontrollerBundle['EMPLOYEES.PAGE_TITLE']}" id="d1">
         <af:messages id="m1"/>
@@ -99,17 +99,15 @@
                         <f:facet name="footer">
                             <af:panelGroupLayout layout="horizontal" id="pgl1">
                                 <af:button actionListener="#{bindings.First.execute}"
-                                           text="#{viewcontrollerBundle['EMPLOYEES.FIRST']}"
-                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                           text="#{viewcontrollerBundle['EMPLOYEES.FIRST']}" partialSubmit="true" id="b1"
+                                           disabled="true"/>
                                 <af:button actionListener="#{bindings.Previous.execute}"
-                                           text="#{af:formatString(viewcontrollerBundle['EMPLOYEES.PREVIOUS'],'2')}"
-                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                           text="#{af:formatString(viewcontrollerBundle['EMPLOYEES.PREVIOUS'],'2')}" partialSubmit="true" id="b2"
+                                           disabled="true"/>
                                 <af:button actionListener="#{bindings.Next.execute}"
-                                           text="#{af:formatString(viewcontrollerBundle['EMPLOYEES.NEXT'],'1')} "
-                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                           text="#{af:formatString(viewcontrollerBundle['EMPLOYEES.NEXT'],'1')} " partialSubmit="true" id="b3"/>
                                 <af:button actionListener="#{bindings.Last.execute}"
-                                           text="#{viewcontrollerBundle['EMPLOYEES.LAST']}"
-                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                           text="#{viewcontrollerBundle['EMPLOYEES.LAST']}" partialSubmit="true" id="b4"/>
                             </af:panelGroupLayout>
                         </f:facet>
                     </af:panelFormLayout>
