@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrAppModule"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="Employees1"
+    ViewObjectName="com.adffaces.chapter2.helloadf.model.views.EmployeesView"/>
+  <ViewUsage
+    Name="Employees2"
+    ViewObjectName="com.adffaces.chapter2.helloadf.model.views.EmployeesView"/>
+  <ViewLinkUsage
+    Name="EmpManagerFkLink1"
+    ViewLinkObjectName="com.adffaces.chapter2.helloadf.model.views.links.EmpManagerFkLink"
+    SrcViewUsageName="com.adffaces.chapter2.helloadf.model.services.HrAppModule.Employees1"
+    DstViewUsageName="com.adffaces.chapter2.helloadf.model.services.HrAppModule.Employees2"
+    Reversed="false"/>
+</AppModule>
