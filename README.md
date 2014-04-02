@@ -1,8 +1,10 @@
-ADF Faces Cookbook
-==================
+# ADF Faces Cookbook
 
 This is the github repository for ADF Faces Cookbook, and it'll contain all the code available in each chapter.
 
-Code materials for ADF Faces Cookbook
+Currently Missing (Will be added very soon)
 
-- Chapter 9 content are added and ready to use.
+-	Chapter 5
+-	Chapter 10
+-	2 Recipe inside Chapter 8
+-	1 Recipe inside Chapter 9
