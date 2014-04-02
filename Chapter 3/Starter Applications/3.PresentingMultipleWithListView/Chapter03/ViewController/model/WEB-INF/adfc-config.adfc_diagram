@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">singleEmployee</property>
+      <property
+         name="page">/singleEmployee.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>singleEmployee&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">174.44824</property>
+      <property
+         name="x">214.35742</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">employeesTable</property>
+      <property
+         name="page">/employeesTable.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesTable&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">166.24707</property>
+      <property
+         name="x">347.0</property>
+   </View>
+</SDM>

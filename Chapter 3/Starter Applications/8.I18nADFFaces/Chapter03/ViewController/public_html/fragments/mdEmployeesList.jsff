@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:listView value="#{bindings.EmployeesView1.treeModel}" var="item"
+               emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+               fetchSize="#{bindings.EmployeesView1.rangeSize}" id="lv1">
+    <af:listItem id="li1">
+      <af:panelGroupLayout id="pgl1">
+        <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of1"/>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of2"/>
+      </af:panelGroupLayout>
+    </af:listItem>
+    <f:facet name="groupHeaderStamp">
+      <af:listItem id="li2">
+        <af:panelGroupLayout id="pgl2">
+          <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of3"/>
+          <af:spacer width="10" height="10" id="s2"/>
+          <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of4"/>
+        </af:panelGroupLayout>
+      </af:listItem>
+    </f:facet>
+  </af:listView>
+</ui:composition>

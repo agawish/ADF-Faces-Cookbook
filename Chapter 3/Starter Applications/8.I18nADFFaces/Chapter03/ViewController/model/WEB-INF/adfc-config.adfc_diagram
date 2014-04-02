@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">singleEmployee</property>
+      <property
+         name="page">/singleEmployee.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>singleEmployee&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">174.44824</property>
+      <property
+         name="x">214.35742</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">employeesTable</property>
+      <property
+         name="page">/employeesTable.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesTable&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">166.24707</property>
+      <property
+         name="x">347.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">employeesList</property>
+      <property
+         name="page">/employeesList.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesList&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">169.24707</property>
+      <property
+         name="x">487.0</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">mdEmployeesTable</property>
+      <property
+         name="page">/mdEmployeesTable.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>mdEmployeesTable&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">287.5459</property>
+      <property
+         name="x">217.0</property>
+   </View>
+   <View
+      id="View6">
+      <property
+         name="activityId">mdEmployeesTree</property>
+      <property
+         name="page">/mdEmployeesTree.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>mdEmployeesTree&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">287.1953</property>
+      <property
+         name="x">345.0</property>
+   </View>
+   <View
+      id="View7">
+      <property
+         name="activityId">mdEmployeesList</property>
+      <property
+         name="page">/mdEmployeesList.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>mdEmployeesList&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">279.24707</property>
+      <property
+         name="x">484.0</property>
+   </View>
+</SDM>

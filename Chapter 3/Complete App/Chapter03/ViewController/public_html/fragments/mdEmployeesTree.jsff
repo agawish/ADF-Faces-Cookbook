@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelSplitter id="ps1">
+    <f:facet name="first">
+      <af:tree value="#{bindings.EmployeesView1.treeModel}" var="node"
+               selectionListener="#{bindings.EmployeesView1.treeModel.makeCurrent}" rowSelection="single" id="t1">
+        <f:facet name="nodeStamp">
+          <af:outputText value="#{node}" id="ot1"/>
+        </f:facet>
+      </af:tree>
+    </f:facet>
+    <f:facet name="second">
+      <af:treeTable value="#{bindings.EmployeesView11.treeModel}" var="node"
+                    selectionListener="#{bindings.EmployeesView11.treeModel.makeCurrent}" rowSelection="single"
+                    id="tt1">
+        <f:facet name="nodeStamp">
+          <af:column id="c1" headerText="Employee">
+            <af:outputText value="#{node.FirstName} #{node.LastName}" id="ot2"/>
+          </af:column>
+        </f:facet>
+        <f:facet name="pathStamp">
+          <af:outputText value="#{node.FirstName} #{node.LastName}" id="ot3"/>
+        </f:facet>
+        <af:column id="c2" headerText="Salary">
+          <af:outputText value="#{node.Salary}" id="ot4"/>
+        </af:column>
+      </af:treeTable>
+    </f:facet>
+  </af:panelSplitter>
+</ui:composition>

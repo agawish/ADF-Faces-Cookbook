@@ -1,6 +1,0 @@
--- USER SQL
-CREATE USER faceshr IDENTIFIED BY faceshr ;
-
--- ROLES
-GRANT "RESOURCE" TO test ;
-GRANT "CONNECT" TO test ;

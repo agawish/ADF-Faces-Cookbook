@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.chapter3.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/singleEmployee.jsf" usageId="com_adffaces_chapter3_view_singleEmployeePageDef"/>
+    <page path="/fragments/employeesTable.jsff" usageId="com_adffaces_chapter3_view_employeesTablePageDef"/>
+    <page path="/employeesTable.jsf" usageId="com_adffaces_chapter3_view_employeesTablePageDef1"/>
+    <page path="/fragments/employeesList.jsff" usageId="com_adffaces_chapter3_view_employeesListPageDef"/>
+    <page path="/employeesList.jsf" usageId="com_adffaces_chapter3_view_employeesListPageDef1"/>
+    <page path="/fragments/mdEmployeesTable.jsff" usageId="com_adffaces_chapter3_view_mdEmployeesTablePageDef"/>
+    <page path="/mdEmployeesTable.jsf" usageId="com_adffaces_chapter3_view_mdEmployeesTablePageDef1"/>
+    <page path="/fragments/mdEmployeesTree.jsff" usageId="com_adffaces_chapter3_view_mdEmployeesTreePageDef"/>
+    <page path="/mdEmployeesTree.jsf" usageId="com_adffaces_chapter3_view_mdEmployeesTreePageDef1"/>
+    <page path="/fragments/mdEmployeesList.jsff" usageId="com_adffaces_chapter3_view_mdEmployeesListPageDef"/>
+    <page path="/mdEmployeesList.jsf" usageId="com_adffaces_chapter3_view_mdEmployeesListPageDef1"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_chapter3_view_singleEmployeePageDef"
+          path="com.adffaces.chapter3.view.pageDefs.singleEmployeePageDef"/>
+    <page id="com_adffaces_chapter3_view_employeesTablePageDef" path="fragments.employeesTablePageDef"/>
+    <page id="com_adffaces_chapter3_view_employeesTablePageDef1"
+          path="com.adffaces.chapter3.view.pageDefs.employeesTablePageDef"/>
+    <page id="com_adffaces_chapter3_view_employeesListPageDef" path="fragments.employeesListPageDef"/>
+    <page id="com_adffaces_chapter3_view_employeesListPageDef1"
+          path="com.adffaces.chapter3.view.pageDefs.employeesListPageDef"/>
+    <page id="com_adffaces_chapter3_view_mdEmployeesTablePageDef" path="fragments.mdEmployeesTablePageDef"/>
+    <page id="com_adffaces_chapter3_view_mdEmployeesTablePageDef1"
+          path="com.adffaces.chapter3.view.pageDefs.mdEmployeesTablePageDef"/>
+    <page id="com_adffaces_chapter3_view_mdEmployeesTreePageDef" path="fragments.mdEmployeesTreePageDef"/>
+    <page id="com_adffaces_chapter3_view_mdEmployeesTreePageDef1"
+          path="com.adffaces.chapter3.view.pageDefs.mdEmployeesTreePageDef"/>
+    <page id="com_adffaces_chapter3_view_mdEmployeesListPageDef" path="fragments.mdEmployeesListPageDef"/>
+    <page id="com_adffaces_chapter3_view_mdEmployeesListPageDef1"
+          path="com.adffaces.chapter3.view.pageDefs.mdEmployeesListPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAppModuleDataControl" Package="com.adffaces.chapter3.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

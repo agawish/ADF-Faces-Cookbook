@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="mdEmployeesTreePageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="HrAppModuleDataControl" id="EmployeesView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
+      <nodeDefinition DefName="com.adffaces.chapter3.model.views.EmployeesView" Name="EmployeesView10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Employees1"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView11">
+      <nodeDefinition DefName="com.adffaces.chapter3.model.views.EmployeesView" Name="EmployeesView110">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Salary"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Employees1"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

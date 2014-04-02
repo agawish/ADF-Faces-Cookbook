@@ -1,0 +1,6 @@
+-- USER SQL
+CREATE USER faceshr IDENTIFIED BY faceshr ;
+
+-- ROLES
+GRANT "RESOURCE" TO faceshr ;
+GRANT "CONNECT" TO faceshr ;

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelAccordion id="pa1">
+    <af:showDetailItem text="ADF List View" id="sdi1">
+      <af:panelGroupLayout id="pgl2" layout="scroll">
+        <af:listView value="#{bindings.EmployeesView1.collectionModel}" var="item"
+                     emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                     fetchSize="#{bindings.EmployeesView1.rangeSize}" id="lv1">
+          <af:listItem id="li1">
+            <af:panelGridLayout id="pgl1">
+              <af:gridRow marginTop="5px" height="auto" id="gr1">
+                <af:gridCell marginStart="5px" width="50%" id="gc1">
+                  <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of1"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="25%" id="gc2">
+                  <af:outputFormatted value="#{item.bindings.Job.inputValue}" id="of2"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc3">
+                  <af:outputFormatted value="#{item.bindings.ManagerId.inputValue}" id="of3">
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView1.hints.ManagerId.format}"/>
+                  </af:outputFormatted>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr2">
+                <af:gridCell marginStart="5px" width="50%" id="gc4">
+                  <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of4"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="25%" id="gc5">
+                  <af:outputFormatted value="#{item.bindings.HireDate.inputValue}" id="of5">
+                    <af:convertDateTime pattern="#{bindings.EmployeesView1.hints.HireDate.format}"/>
+                  </af:outputFormatted>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="25%" rowSpan="3" marginEnd="5px" id="gc6">
+                  <af:outputFormatted value="#{item.bindings.DepartmentId.inputValue}" id="of6">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.EmployeesView1.hints.DepartmentId.format}"/>
+                  </af:outputFormatted>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr3">
+                <af:gridCell marginStart="5px" width="50%" id="gc7">
+                  <af:outputFormatted value="#{item.bindings.Email.inputValue}" id="of7"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc8">
+                  <af:outputFormatted value="#{item.bindings.Salary.inputValue}" id="of8">
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView1.hints.Salary.format}"/>
+                  </af:outputFormatted>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                <af:gridCell marginStart="5px" width="50%" id="gc9">
+                  <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of9"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc10">
+                  <af:outputFormatted value="#{item.bindings.CommissionPct.inputValue}" id="of10">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.EmployeesView1.hints.CommissionPct.format}"/>
+                  </af:outputFormatted>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </af:listItem>
+        </af:listView>
+      </af:panelGroupLayout>
+    </af:showDetailItem>
+    <af:showDetailItem text="ADF Iterator" id="sdi2">
+      <af:panelGroupLayout id="pgl3" layout="scroll">
+        <af:panelList id="pl1">
+          <af:iterator id="i1" value="#{bindings.EmployeesView1.collectionModel}" var="emp" rows="50">
+            <af:outputText value="#{emp.FirstName} #{emp.LastName}" id="ot1"/>
+          </af:iterator>
+        </af:panelList>
+      </af:panelGroupLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="singleEmployee">
+    <page>/singleEmployee.jsf</page>
+  </view>
+  <view id="employeesTable">
+    <page>/employeesTable.jsf</page>
+  </view>
+  <view id="employeesList">
+    <page>/employeesList.jsf</page>
+  </view>
+  <view id="mdEmployeesTable">
+    <page>/mdEmployeesTable.jsf</page>
+  </view>
+  <view id="mdEmployeesTree">
+    <page>/mdEmployeesTree.jsf</page>
+  </view>
+  <view id="mdEmployeesList">
+    <page>/mdEmployeesList.jsf</page>
+  </view>
+</adfc-config>
