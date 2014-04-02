@@ -1,4 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
-   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false" critical="false" page-type="facelets"/>
-</task-flow-registry>

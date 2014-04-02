@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="windows-1252" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="master-details-employees-table">
-    <default-activity>mdEmployeesTable</default-activity>
-    <view id="mdEmployeesTable">
-      <page>/mdEmployeesTable.jsf</page>
-    </view>
-  </task-flow-definition>
-</adfc-config>
