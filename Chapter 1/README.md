@@ -1,5 +1,4 @@
 # ADF Faces Cookbook - Chapter 1
-===============================
 
 -	This Chapter doesn't include any code, but it includes installation guides and tuning options for JDeveloper and ADF, so Use the following links for installations:
 
