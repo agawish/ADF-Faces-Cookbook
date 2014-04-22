@@ -30,5 +30,4 @@ If you have any problems or Feedback, please don't hesitate to provide them eith
 
 ## Currently Missing
 
--	2 Recipes inside Chapter 8
 -	1 Recipe inside Chapter 9
