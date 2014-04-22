@@ -7,6 +7,7 @@
             <af:pageTemplate viewId="/templates/defaultHrTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="Left"/>
                 <f:facet name="Center">
+                    <af:button text="Show Messages" id="b5" action="#{messagesBean.showMessages}"/>
                     <af:panelFormLayout id="pfl1">
                         <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
                                       required="#{bindings.FirstName.hints.mandatory}"
@@ -64,12 +65,16 @@
                                            shortDesc="#{bindings.Biography.hints.tooltip}" id="it4">
                             <f:converter converterId="com.adffaces.ClobConverter"/>
                         </af:richTextEditor>
+                        <af:inputText value="#{bindings.CodeSample.inputValue}"
+                                      label="#{bindings.CodeSample.hints.label}" id="it5" rows="10" columns="40">
+                            <f:converter converterId="com.adffaces.XmlConverter"/>
+                        </af:inputText>
                         <af:inputText value="#{bindings.PhoneNumber.inputValue}"
                                       label="#{bindings.PhoneNumber.hints.label}"
                                       required="#{bindings.PhoneNumber.hints.mandatory}"
                                       columns="#{bindings.PhoneNumber.hints.displayWidth}"
                                       maximumLength="#{bindings.PhoneNumber.hints.precision}"
-                                      shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="it5">
+                                      shortDesc="#{bindings.PhoneNumber.hints.tooltip}" id="it15">
                             <af:validateRegExp pattern="\\d{3}\\.\\d{2,3}\\.\\d{4}(\\.\\d{6})?"
                                                hint="The valid formats are either: 123.123.1234.123456 or 123.123.1234"
                                                messageDetailNoMatch="You didn’t enter a valid format, the valid formats are either: 123.12.1234.123456 or 123.123.1234"/>

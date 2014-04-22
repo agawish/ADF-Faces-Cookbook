@@ -3,4 +3,9 @@
   <view id="employees">
     <page>/employees.jsf</page>
   </view>
+  <managed-bean id="__1">
+    <managed-bean-name>messagesBean</managed-bean-name>
+    <managed-bean-class>com.adffaces.chapter8.view.beans.MessagesBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

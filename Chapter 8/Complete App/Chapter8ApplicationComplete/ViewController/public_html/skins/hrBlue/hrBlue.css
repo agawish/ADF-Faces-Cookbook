@@ -80,3 +80,15 @@ af|link.blue-button:hover, af|link.blue-button:focus, af|link.blue-button:active
   border-color: #269abc;
 }
 
+af|messages{
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+af|messages.p_AFError{
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}

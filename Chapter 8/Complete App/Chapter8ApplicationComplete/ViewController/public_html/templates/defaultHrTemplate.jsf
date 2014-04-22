@@ -37,7 +37,10 @@
             </af:panelGroupLayout>
         </f:facet>
         <f:facet name="center">
-            <af:facetRef facetName="Center"/>
+            <af:panelGroupLayout id="pt_pgl4">
+                <af:messages id="pt_m1" inline="true"/>
+                <af:facetRef facetName="Center"/>
+            </af:panelGroupLayout>
         </f:facet>
         <f:facet name="start">
             <af:facetRef facetName="Left"/>

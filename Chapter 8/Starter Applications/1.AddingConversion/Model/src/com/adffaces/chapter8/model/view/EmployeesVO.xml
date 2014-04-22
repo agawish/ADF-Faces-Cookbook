@@ -18,7 +18,8 @@
        EmployeesEO.MANAGER_ID, 
        EmployeesEO.DEPARTMENT_ID, 
        EmployeesEO.IMAGE, 
-       EmployeesEO.BIOGRAPHY"
+       EmployeesEO.BIOGRAPHY, 
+       EmployeesEO.CODE_SAMPLE"
   FromList="EMPLOYEES EmployeesEO"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -106,6 +107,13 @@
     EntityAttrName="Biography"
     EntityUsage="EmployeesEO"
     AliasName="BIOGRAPHY"/>
+  <ViewAttribute
+    Name="CodeSample"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="CodeSample"
+    EntityUsage="EmployeesEO"
+    AliasName="CODE_SAMPLE"/>
   <ViewLinkAccessor
     Name="EmployeesVO"
     ViewLink="com.adffaces.chapter8.model.view.links.EmployeesEmployeesFk1Link"
