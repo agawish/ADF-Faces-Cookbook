@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.adffaces.chapter9.model.Chapter9AM">
+      <AppModuleConfig name="Chapter9AMLocal" jbo.project="com.adffaces.chapter9.model.Model" ApplicationName="com.adffaces.chapter9.model.Chapter9AM" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.adffaces.chapter9.model.Chapter9AM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/FacesHrDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="Chapter9AMShared" jbo.project="com.adffaces.chapter9.model.Model" ApplicationName="com.adffaces.chapter9.model.Chapter9AM" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.adffaces.chapter9.model.Chapter9AM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/FacesHrDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

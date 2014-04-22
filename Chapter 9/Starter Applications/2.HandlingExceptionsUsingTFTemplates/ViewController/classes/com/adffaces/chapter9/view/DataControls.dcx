@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.1.2.66.68" id="DataControls"
+                    Package="com.adffaces.chapter9.view">
+  <AdapterDataControl id="ExceptionHandler" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.adffaces.chapter9.view.handlers.ExceptionHandler"
+                      BeanClass="com.adffaces.chapter9.view.handlers.ExceptionHandler"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.adffaces.chapter9.view.handlers.ExceptionHandler"
+                       DataControlHandler="oracle.adf.model.adapter.bean.BeanDCHandler" EagerPersist="false"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

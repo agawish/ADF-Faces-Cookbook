@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68"
+                id="hr_crud_template_hr_crud_template_handleExceptionPageDef" Package="templates" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="handleException" RequiresUpdateModel="true" Action="invokeMethod" MethodName="handleException"
+                  IsViewObjectMethod="false" DataControl="ExceptionHandler"
+                  InstanceName="data.ExceptionHandler.dataProvider"/>
+  </bindings>
+</pageDefinition>

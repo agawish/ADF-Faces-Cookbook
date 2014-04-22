@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="hr-crud-template">
+    <default-activity>viewAll</default-activity>
+    <exception-handler>handleException</exception-handler>
+    <view id="viewAll"></view>
+    <method-call id="createNew"></method-call>
+    <view id="newHrRecord"></view>
+    <method-call id="Commit">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="handleException">
+      <method>#{bindings.handleException.execute}</method>
+      <outcome>
+        <fixed-outcome>handleException</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="throwRuntimeException">
+      <method>#{bindings.throwRuntimeException.execute}</method>
+      <outcome>
+        <fixed-outcome>throwRuntimeException</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>viewAll</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>create</from-outcome>
+        <to-activity-id>createNew</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>throwError</from-outcome>
+        <to-activity-id>throwRuntimeException</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>createNew</from-activity-id>
+      <control-flow-case id="__6">
+        <to-activity-id>newHrRecord</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>newHrRecord</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>save</from-outcome>
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>Commit</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>viewAll</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>Rollback</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>Rollback</from-outcome>
+        <to-activity-id>viewAll</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>throwRuntimeException</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome>throwRuntimeException</from-outcome>
+        <to-activity-id>viewAll</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-template>
+</adfc-config>
