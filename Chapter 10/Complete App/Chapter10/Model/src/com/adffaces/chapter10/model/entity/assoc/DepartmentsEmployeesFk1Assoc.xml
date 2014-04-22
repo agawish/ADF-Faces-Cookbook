@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentsEmployeesFk1Assoc"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Employees"
+    Cardinality="1"
+    Source="true"
+    Owner="com.adffaces.chapter10.model.entity.EmployeesEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Employees"/>
+      <Attr Name="_foreignKey" Value="com.adffaces.chapter10.model.entity.EmployeesEO.EmployeesPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter10.model.entity.EmployeesEO.EmployeeId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Departments"
+    Cardinality="-1"
+    Owner="com.adffaces.chapter10.model.entity.DepartmentsEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Departments"/>
+      <Attr Name="_foreignKey" Value="com.adffaces.chapter10.model.entity.DepartmentsEO.DepartmentsEmployeesFk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter10.model.entity.DepartmentsEO.ManagerId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

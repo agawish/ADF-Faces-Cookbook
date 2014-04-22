@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TasksTasksFk1Assoc"
+  Version="12.1.2.66.68"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ParentTaskIdTasks"
+    Cardinality="1"
+    Source="true"
+    Owner="com.adffaces.chapter10.model.entity.TasksEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ParentTaskIdTasks"/>
+      <Attr Name="_foreignKey" Value="com.adffaces.chapter10.model.entity.TasksEO.TasksPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter10.model.entity.TasksEO.TaskId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Tasks"
+    Cardinality="-1"
+    Owner="com.adffaces.chapter10.model.entity.TasksEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Tasks"/>
+      <Attr Name="_foreignKey" Value="com.adffaces.chapter10.model.entity.TasksEO.TasksTasksFk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.adffaces.chapter10.model.entity.TasksEO.ParentTaskId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

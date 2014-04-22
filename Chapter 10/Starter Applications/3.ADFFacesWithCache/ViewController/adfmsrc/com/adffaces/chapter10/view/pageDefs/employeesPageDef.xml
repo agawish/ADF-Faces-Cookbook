@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="employeesPageDef"
+                Package="com.adffaces.chapter10.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.defaultHrTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="Employees1" RangeSize="25" DataControl="Chapter10AMDataControl" id="Employees1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Employees1Iterator" id="Employees1">
+      <nodeDefinition DefName="com.adffaces.chapter10.model.views.EmployeesVO" Name="Employees10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="Job"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
