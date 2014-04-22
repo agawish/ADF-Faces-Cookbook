@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.adffaces.chapter5.view" ClientType="Generic">
+  <pageMap>
+    <page path="/templates/defaultHrTemplate.jsf" usageId="com_adffaces_chapter5_view_defaultHrTemplatePageDef"/>
+    <page path="/employeesTable.jsf" usageId="com_adffaces_chapter5_view_employeesTablePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_adffaces_chapter5_view_defaultHrTemplatePageDef"
+          path="com.adffaces.chapter5.view.pageDefs.defaultHrTemplatePageDef"/>
+    <page id="com_adffaces_chapter5_view_employeesTablePageDef"
+          path="com.adffaces.chapter5.view.pageDefs.employeesTablePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="Chapter5AppModuleDataControl" Package="com.adffaces.chapter5.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

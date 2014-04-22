@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.AFDefaultFontFamily:alias {
+    font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.AFDefaultFont:alias {
+    font-size: 13.5pt;
+}
+
+.AFTextColor:alias {
+    color: #878e83;
+}
+
+.AFTextPrimaryColor:alias {
+    color: #878e83;
+}
+
+.AFTextSecondaryColor:alias {
+    color: #6B7167;
+}
+
+.AFTextTertiaryColor:alias {
+    color: #878E83;
+}
+
+.AFLabelColor:alias {
+    color: #6B7167;
+}
+
+.AFGridCellBorderColor:alias {
+    color: #FFFFFF;
+}
+
+af|column::column-header-cell {
+    background-color: #FFFFFF;
+    color: #007897;
+    border: 0px;
+    border-color: #007897;
+    border-bottom: 2px solid #007897;
+}
+
+af|table::data-row {
+    height: 30px !important;
+}
+
+.hr-header-wrapper {
+    background-color: #007294;
+}
+
+.hr-header-main {
+    background-color: #007b9d;
+    border: solid 1px #006e8b;
+    padding: 20px;
+    margin: 2.5% 0 2.5% 0;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 0px 1px #12a0bf, 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+.hr-header-title {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hr-footer-wrapper {
+    background: #E3E9DC;
+}
+
+.hr-footer-copyright {
+    color: #A6A88F;
+    font-size: 18px;
+    display: block;
+    margin: 1% 0 0 0;
+}

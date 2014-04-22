@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+.AFDefaultFontFamily:alias {
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.AFDefaultFont:alias {
+  font-size: 13.5pt;
+}
+
+.AFTextColor:alias {
+  color: #878e83;
+}
+
+.AFTextTertiaryColor:alias {
+  color: #878e83;
+}
+
+.AFTextSecondaryColor:alias {
+  color: #6b7167;
+}
+
+.AFLabelColor:alias {
+  color: #6b7167;
+}
+
+.AFTextPrimaryColor:alias {
+  color: #878e83;
+}
+
+.AFGridCellBorderColor:alias {
+  color: white;
+}
+
+.AFTableCellDataHGrid:alias {
+  border: 0px;
+}
+
+.AFTableCellDataVGrid:alias {
+  border: 0px;
+}
+
+af|table af|column::column-header-cell {
+  border: 0px;
+  border-color: #007897;
+  border-bottom: 2px solid #007897;
+  height: 30px;
+  color: #007897;
+  background-color: white;
+}
+af|table::data-row {
+  height: 30px !important;
+}
+
+af|link {
+  color: #ffffff;
+}
+af|link.red-button {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+af|link.red-button:hover, af|link.red-button:focus, af|link.red-button:active {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+af|link.blue-button {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+af|link.blue-button:hover, af|link.blue-button:focus, af|link.blue-button:active {
+  color: #ffffff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}

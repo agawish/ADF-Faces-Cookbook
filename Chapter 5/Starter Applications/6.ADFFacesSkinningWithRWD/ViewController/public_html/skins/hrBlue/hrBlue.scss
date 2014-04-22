@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+// Variables definition
+$defaultFontSize: 13.5pt;
+$defaultFontFamily: 'Ubuntu Condensed', sans-serif;
+$defaultTextColor: #878e83;
+$secondaryTextColor: #6B7167;
+$defaultBorderColor: #fff;
+$tableHeaderColor: #007897;
+$tableRowHeight: 30px;
+$tableBorder: 0px;
+
+
+// Use Variables by appending $ and the name of the variable
+.AFDefaultFontFamily:alias {
+font-family: $defaultFontFamily;
+}
+.AFDefaultFont:alias {
+// you can use mathematical operations with your variables
+font-size: $defaultFontSize / 2 * 2;
+}
+.AFTextColor:alias {
+color: $defaultTextColor;
+}
+
+.AFTextTertiaryColor:alias {
+color: $defaultTextColor;
+}
+.AFTextSecondaryColor:alias {
+color: $secondaryTextColor;
+}
+.AFLabelColor:alias {
+color: $secondaryTextColor;
+}
+.AFTextPrimaryColor:alias {
+color: $defaultTextColor;
+}
+.AFGridCellBorderColor:alias {
+color: $defaultBorderColor;
+}
+.AFTableCellDataHGrid:alias {
+border: $tableBorder;
+}
+.AFTableCellDataVGrid:alias {
+border: $tableBorder;
+}
+
+// You can use nested component
+af|table{
+    & af|column {
+        &::column-header-cell{
+            border: $tableBorder;
+            border-color: $tableHeaderColor;
+            border-bottom: 2px solid $tableHeaderColor;
+            height: $tableRowHeight;
+            color: $tableHeaderColor;
+            background-color: white;
+        }
+    }
+    &::data-row{
+        height: $tableRowHeight !important;
+    }
+}

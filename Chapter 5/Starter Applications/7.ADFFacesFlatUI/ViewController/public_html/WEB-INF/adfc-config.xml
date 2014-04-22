@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+    <view id="employeesTable">
+        <page>/employeesTable.jsf</page>
+    </view>
+    <view id="responsiveEmployees">
+        <page>/responsiveEmployees.jsf</page>
+    </view>
+    <managed-bean id="__1">
+        <managed-bean-name>userSkin</managed-bean-name>
+        <managed-bean-class>com.adffaces.chapter5.view.beans.UserSkinBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+</adfc-config>

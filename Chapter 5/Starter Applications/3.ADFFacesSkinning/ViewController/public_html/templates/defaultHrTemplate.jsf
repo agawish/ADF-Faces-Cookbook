@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['com.adffaces.chapter5.view.ViewControllerBundle']}"/>
+    <af:xmlContent>
+        <afc:component>
+            <afc:description>This is the default page template of HR App</afc:description>
+            <afc:display-name>defaultHrTemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>Left</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:facet-name>Center</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:facet-name>Right</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>leftColumnWidth</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+                <afc:default-value>100px</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>rightColumnWidth</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+                <afc:default-value>100px</afc:default-value>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelStretchLayout id="pt_psl1" dimensionsFrom="parent" startWidth="#{attrs.leftColumnWidth}"
+                           endWidth="#{attrs.rightColumnWidth}" topHeight="150px">
+        <f:facet name="bottom">
+            <af:panelGroupLayout id="pt_pgl3" layout="vertical" halign="center"
+                                 inlineStyle="background-color: #E3E9DC;">
+                <af:outputText value="#{viewcontrollerBundle.HR_APP__ALL_RIGHTS_RESERVED}" id="pt_ot2"
+                               inlineStyle="color:#A6A88F; font-size:18px; display:block;margin: 1% 0 0 0;"/>
+            </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+            <af:facetRef facetName="Center"/>
+        </f:facet>
+        <f:facet name="start">
+            <af:facetRef facetName="Left"/>
+        </f:facet>
+        <f:facet name="end">
+            <af:facetRef facetName="Right"/>
+        </f:facet>
+        <f:facet name="top">
+            <af:panelGroupLayout id="pt_pgl1" layout="vertical" halign="center"
+                                 inlineStyle="background-color: #007294;">
+                <af:panelGroupLayout id="pt_pgl2" layout="horizontal"
+                                     inlineStyle="background-color: #007b9d; border: solid 1px #006e8b; padding:20px;margin: 2.5% 0 2.5% 0;">
+                    <af:outputText value="#{viewcontrollerBundle.HR_APP}" id="pt_ot1"
+                                   inlineStyle="color:#fff; font-size:x-large;"/>
+                    <af:spacer width="300" height="10" id="pt_s1"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:panelStretchLayout>
+</af:pageTemplateDef>

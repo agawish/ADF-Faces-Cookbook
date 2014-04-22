@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+.AFDefaultFontFamily:alias {
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.AFDefaultFont:alias {
+  font-size: 13.5pt;
+}
+
+.AFTextColor:alias {
+  color: #878e83;
+}
+
+.AFTextTertiaryColor:alias {
+  color: #878e83;
+}
+
+.AFTextSecondaryColor:alias {
+  color: #6b7167;
+}
+
+.AFLabelColor:alias {
+  color: #6b7167;
+}
+
+.AFTextPrimaryColor:alias {
+  color: #878e83;
+}
+
+.AFGridCellBorderColor:alias {
+  color: white;
+}
+
+.AFTableCellDataHGrid:alias {
+  border: 0px;
+}
+
+.AFTableCellDataVGrid:alias {
+  border: 0px;
+}
+
+af|table af|column::column-header-cell {
+  border: 0px;
+  border-color: #007897;
+  border-bottom: 2px solid #007897;
+  height: 30px;
+  color: #007897;
+  background-color: white;
+}
+af|table::data-row {
+  height: 30px !important;
+}
