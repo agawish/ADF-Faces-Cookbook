@@ -11,7 +11,6 @@
 
 Currently Missing (Will be added very soon)
 
--	Chapter 5
 -	Chapter 10
 -	2 Recipes inside Chapter 8
 -	1 Recipe inside Chapter 9
