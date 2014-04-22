@@ -27,7 +27,3 @@ The Directory [BookDatabaseSchema](./BookDatabaseSchema/) contains custom schema
 ## Support and Feedback
 
 If you have any problems or Feedback, please don't hesitate to provide them either through this repository or any other social media.
-
-## Currently Missing
-
--	1 Recipe inside Chapter 9
